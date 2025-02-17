@@ -50,6 +50,10 @@ public class IdempotencyMiddleware
             memoryStream.Seek(0, SeekOrigin.Begin);
             await memoryStream.CopyToAsync(originalBodyStream);
         }
+        else
+        {
+            await _next(context);
+        }
 
     }
 }

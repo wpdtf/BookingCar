@@ -1,3 +1,6 @@
+using Microsoft.AspNetCore.Diagnostics;
+using Microsoft.Data.SqlClient;
+
 namespace BookingCar.Api;
 
 internal static class Program
@@ -32,8 +35,18 @@ internal static class Program
             var xmlFiles = Directory.GetFiles(AppContext.BaseDirectory, "*.xml", SearchOption.TopDirectoryOnly).ToList();
             xmlFiles.ForEach(xmlFile => options.IncludeXmlComments(xmlFile));
         });
-        builder.Services.AddHttpClient<IFindEntityService, FindEntityService>()
-            .ConfigureHttpClient(x => x.BaseAddress = configuration.FindEntityUrl);
+
+        builder.Services.AddProblemDetails(options => options.CustomizeProblemDetails = (context) =>
+        {
+            var ex = context.HttpContext.Features.Get<IExceptionHandlerFeature>()?.Error;
+            int code = -1;
+            if (ex is SqlException sqlException)
+            {
+                context.ProblemDetails.Detail = ex.Message;
+            }
+
+            context.ProblemDetails.Extensions["errorCode"] = code;
+        });
 
         builder.Services.AddMemoryCache();
         builder.Services.AddSingleton<IIdempotencyCacheService, IdempotencyCacheService>();
