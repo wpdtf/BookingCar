@@ -10,25 +10,25 @@ public class Booking
     /// <summary>
     /// Ключ автомобиля
     /// </summary>
-    public string CarId { get; set; }
+    public int CarId { get; set; }
 
     /// <summary>
     /// Ключ клиента
     /// </summary>
-    public string ClientId { get; set; }
+    public int ClientId { get; set; }
 
     /// <summary>
     /// Статус бронирования
     /// </summary>
-    public string Status { get; set; }
+    public int Status { get; set; }
 
     /// <summary>
     /// Время создания бронирования
     /// </summary>
-    public string BookingTime { get; set; }
+    public int BookingTime { get; set; }
 
     /// <summary>
     /// Время начала поездки
     /// </summary>
-    public DateOnly BookingStart { get; set; }
+    public DateTime BookingStart { get; set; }
 }

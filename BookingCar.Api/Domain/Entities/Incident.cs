@@ -25,5 +25,5 @@ public class Incident
     /// <summary>
     /// Логин сотрудника
     /// </summary>
-    public int NomerTicket { get; set; }
+    public string NomerTicket { get; set; }
 }

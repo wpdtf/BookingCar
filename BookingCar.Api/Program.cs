@@ -14,6 +14,8 @@ internal static class Program
 
         builder.Services.AddDbContext<GeneralRepository>(x =>
             x.UseSqlServer(configuration.ConnectionStrings.MsSqlConnection), ServiceLifetime.Singleton);
+        builder.Services.AddDbContext<BookingRepository>(x =>
+            x.UseSqlServer(configuration.ConnectionStrings.MsSqlConnection), ServiceLifetime.Singleton);
 
         builder.Services.AddHttpLogging(x => x.LoggingFields = HttpLoggingFields.ResponseBody | HttpLoggingFields.RequestBody |
             HttpLoggingFields.RequestProperties | HttpLoggingFields.ResponseStatusCode);
@@ -52,6 +54,7 @@ internal static class Program
         builder.Services.AddSingleton<IIdempotencyCacheService, IdempotencyCacheService>();
 
         builder.Services.AddScoped<IGeneralRepository, GeneralRepository>();
+        builder.Services.AddScoped<IBookingRepository, BookingRepository>();
 
         builder.Services.AddResponseCaching();
 
