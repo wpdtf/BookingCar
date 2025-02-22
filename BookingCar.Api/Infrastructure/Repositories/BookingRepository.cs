@@ -1,18 +1,14 @@
-using BookingCar.Api.Domain.Entities;
-
 namespace BookingCar.Api.Infrastructure.Repositories;
 
-public class BookingRepository : DbContext, IBookingRepository
+public class BookingRepository(DataBaseContext dbContext) : IBookingRepository
 {
-    public BookingRepository(DbContextOptions<BookingRepository> configure) : base(configure)
-    {
-    }
+    private readonly DatabaseFacade _dbContext = dbContext.Database;
 
     public async Task<IEnumerable<Car>> ViewCarAsync(int carId)
     {
         FormattableString sql = @$"dbo.ПросмотрАвтомобилей @carId = {carId}";
 
-        return await Task.Run(() => Database.SqlQuery<Car>(sql));
+        return await Task.Run(() => _dbContext.SqlQuery<Car>(sql));
     }
 
     public async Task EditCarAsync(Car car)
@@ -20,14 +16,14 @@ public class BookingRepository : DbContext, IBookingRepository
         FormattableString sql = @$"dbo.ИзменениеАвтомобиля 
             @JSON = {JsonSerializer.Serialize(car)}";
 
-        await Database.ExecuteSqlAsync(sql);
+        await _dbContext.ExecuteSqlAsync(sql);
     }
 
     public async Task<IEnumerable<Tariff>> ViewTariffAsync(int tariffId)
     {
         FormattableString sql = @$"dbo.ПросмотрТарифов @tariffId = {tariffId}";
 
-        return await Task.Run(() => Database.SqlQuery<Tariff>(sql));
+        return await Task.Run(() => _dbContext.SqlQuery<Tariff>(sql));
     }
 
     public async Task EditTariffAsync(Tariff tariff)
@@ -35,7 +31,7 @@ public class BookingRepository : DbContext, IBookingRepository
         FormattableString sql = @$"dbo.ИзменениеТарифов 
             @JSON = {JsonSerializer.Serialize(tariff)}";
 
-        await Database.ExecuteSqlAsync(sql);
+        await _dbContext.ExecuteSqlAsync(sql);
     }
 
     public async Task EditTariffToCarAsync(int tariffId, int carId)
@@ -43,7 +39,7 @@ public class BookingRepository : DbContext, IBookingRepository
         FormattableString sql = @$"dbo.ДобавлениеУдалениеТарифаАвто
             @tariffId = {tariffId}, @carId = {carId}";
 
-        await Database.ExecuteSqlAsync(sql);
+        await _dbContext.ExecuteSqlAsync(sql);
     }
 
     public async Task<IEnumerable<TariffCar>> ViewTariffToCarAsync(int tariffId, int carId)
@@ -51,7 +47,7 @@ public class BookingRepository : DbContext, IBookingRepository
         FormattableString sql = @$"dbo.ПросмотрТарифаИАвто 
             @tariffId = {tariffId}, @carId = {carId}";
 
-        return await Task.Run(() => Database.SqlQuery<TariffCar>(sql));
+        return await Task.Run(() => _dbContext.SqlQuery<TariffCar>(sql));
     }
 
     public async Task<IEnumerable<Booking>> ViewBookingAsync(int bookingId)
@@ -59,7 +55,7 @@ public class BookingRepository : DbContext, IBookingRepository
         FormattableString sql = @$"dbo.ПросмотрБронирования 
             @bookingId = {bookingId}";
 
-        return await Task.Run(() => Database.SqlQuery<Booking>(sql));
+        return await Task.Run(() => _dbContext.SqlQuery<Booking>(sql));
     }
 
     public async Task EditBookingAsync(Booking booking)
@@ -67,7 +63,7 @@ public class BookingRepository : DbContext, IBookingRepository
         FormattableString sql = @$"dbo.ИзменениеБронирования 
             @JSON = {JsonSerializer.Serialize(booking)}";
 
-        await Database.ExecuteSqlAsync(sql);
+        await _dbContext.ExecuteSqlAsync(sql);
     }
 
     public async Task<IEnumerable<Incident>> ViewIncidentAsync(int incidentId)
@@ -75,7 +71,7 @@ public class BookingRepository : DbContext, IBookingRepository
         FormattableString sql = @$"dbo.ПросмотрИнцидента 
             @incidentId = {incidentId}";
 
-        return await Task.Run(() => Database.SqlQuery<Incident>(sql));
+        return await Task.Run(() => _dbContext.SqlQuery<Incident>(sql));
     }
 
     public async Task EditIncidentAsync(Incident incident)
@@ -83,6 +79,14 @@ public class BookingRepository : DbContext, IBookingRepository
         FormattableString sql = @$"dbo.ИзменениеИнцидента 
             @JSON = {JsonSerializer.Serialize(incident)}";
 
-        await Database.ExecuteSqlAsync(sql);
+        await _dbContext.ExecuteSqlAsync(sql);
+    }
+
+    public async Task<IEnumerable<Client>> ViewClientToCarAsync(int carId)
+    {
+        FormattableString sql = @$"dbo.ПолучитьКлиентовДляАвто 
+            @carId = {JsonSerializer.Serialize(carId)}";
+
+        return await Task.Run(() => _dbContext.SqlQuery<Client>(sql));
     }
 }

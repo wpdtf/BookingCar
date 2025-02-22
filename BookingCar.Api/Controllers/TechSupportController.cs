@@ -15,7 +15,7 @@ public class TechSupportController : ControllerBase
     }
 
     /// <summary>
-    /// Получение данных для авторизации
+    /// Авторизация сотрудника в приложении
     /// </summary>
     /// <param name="authDTO">Данные для авторизации</param>
     /// <returns>При успешном выполнении вернутся данные по сотруднику, или ошибка.</returns>
@@ -44,7 +44,7 @@ public class TechSupportController : ControllerBase
     }
 
     /// <summary>
-    /// Получение данных для авторизации
+    /// Создаем\редактируем пользователя
     /// </summary>
     /// <param name="createDTO">Данные для создания клиента</param>
     /// <returns>При успешном выполнении вернутся данные по сотруднику, или ошибка.</returns>
@@ -59,7 +59,7 @@ public class TechSupportController : ControllerBase
     }
 
     /// <summary>
-    /// Получение данных по сотрудникм
+    /// Просматриваем всех сотрудников
     /// </summary>
     /// <returns>При успешном выполнении вернутся данные по сотруднику, или ошибка.</returns>
     [HttpGet("staff")]
@@ -72,7 +72,7 @@ public class TechSupportController : ControllerBase
     }
 
     /// <summary>
-    /// Получение данных по сотрудникм
+    /// Редактируем данные по сотрудникам
     /// </summary>
     /// <returns>При успешном выполнении вернутся данные по сотруднику, или ошибка.</returns>
     [HttpPut("staff")]

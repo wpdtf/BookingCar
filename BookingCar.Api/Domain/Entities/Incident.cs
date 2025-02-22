@@ -3,27 +3,27 @@ namespace BookingCar.Api.Domain.Entities;
 public class Incident
 {
     /// <summary>
-    /// Логин сотрудника
+    /// Ключ инцидента
     /// </summary>
     public int IncidentId { get; set; }
 
     /// <summary>
-    /// Логин сотрудника
-    /// </summary>
-    public int BookingId { get; set; }
-
-    /// <summary>
-    /// Логин сотрудника
+    /// Виноват клиент?
     /// </summary>
     public bool ClientGuilty { get; set; }
 
     /// <summary>
-    /// Логин сотрудника
+    /// Описание инцидента
     /// </summary>
     public string Description { get; set; }
 
     /// <summary>
-    /// Логин сотрудника
+    /// Номер обращения в ГАИ
     /// </summary>
     public string NomerTicket { get; set; }
+
+    /// <summary>
+    /// Ключ бронирования
+    /// </summary>
+    public int BookingId { get; set; }
 }

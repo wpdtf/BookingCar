@@ -139,7 +139,7 @@ public class BookingController : ControllerBase
     /// </summary>
     /// <param name="incident">Какого инцидента</param>
     /// <returns>При успешном выполнении вернутся данные, или ошибка.</returns>
-    [HttpPut("Incident")]
+    [HttpPut("incident")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesDefaultResponseType(typeof(ProblemDetails))]
@@ -154,12 +154,26 @@ public class BookingController : ControllerBase
     /// </summary>
     /// <param name="incideintId">По какому инциденту</param>
     /// <returns>При успешном выполнении вернутся данные, или ошибка.</returns>
-    [HttpGet("Incident")]
+    [HttpGet("incident")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesDefaultResponseType(typeof(ProblemDetails))]
     public async Task<IActionResult> ViewIncidentAsync([FromQuery] int incideintId)
     {
         return Ok(await _bookingRepository.ViewIncidentAsync(incideintId));
+    }
+
+    /// <summary>
+    /// Получение клиентов которым доступен определенный автомобиль
+    /// </summary>
+    /// <param name="carId">По какому автомобилю</param>
+    /// <returns>При успешном выполнении вернутся данные, или ошибка.</returns>
+    [HttpGet("client-to-car")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [ProducesDefaultResponseType(typeof(ProblemDetails))]
+    public async Task<IActionResult> ClientToCarAsync([FromQuery] int carId)
+    {
+        return Ok(await _bookingRepository.ViewClientToCarAsync(carId));
     }
 }

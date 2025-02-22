@@ -63,4 +63,10 @@ public interface IBookingRepository
     /// </summary>
     /// <param name="incident">Какого ицидента</param>
     Task EditIncidentAsync(Incident incident);
+
+    /// <summary>
+    /// Получить клиентов подходящих к автомобилю
+    /// </summary>
+    /// <param name="carId">Автомобиль</param>
+    Task<IEnumerable<Client>> ViewClientToCarAsync(int carId);
 }

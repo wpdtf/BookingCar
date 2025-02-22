@@ -562,13 +562,13 @@
         }
       }
     },
-    "/api/booking-car/booking/Incident": {
+    "/api/booking-car/booking/incident": {
       "put": {
         "tags": [
           "Booking"
         ],
         "summary": "Редактирование инцидентов",
-        "operationId": "api/booking-car/booking/IncidentPUT",
+        "operationId": "api/booking-car/booking/incidentPUT",
         "requestBody": {
           "description": "Какого инцидента",
           "content": {
@@ -640,7 +640,7 @@
           "Booking"
         ],
         "summary": "Получение данных по инциденту",
-        "operationId": "api/booking-car/booking/IncidentGET",
+        "operationId": "api/booking-car/booking/incidentGET",
         "parameters": [
           {
             "name": "incideintId",
@@ -699,12 +699,541 @@
         }
       }
     },
+    "/api/booking-car/booking/client-to-car": {
+      "get": {
+        "tags": [
+          "Booking"
+        ],
+        "summary": "Получение клиентов которым доступен определенный автомобиль",
+        "operationId": "api/booking-car/booking/client-to-carGET",
+        "parameters": [
+          {
+            "name": "carId",
+            "in": "query",
+            "description": "По какому автомобилю",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/booking-car/client/list": {
+      "get": {
+        "tags": [
+          "Client"
+        ],
+        "summary": "Получение данных по клиента",
+        "operationId": "api/booking-car/client/listGET",
+        "parameters": [
+          {
+            "name": "clientId",
+            "in": "query",
+            "description": "По конкретному клиенту",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/booking-car/client/edit": {
+      "put": {
+        "tags": [
+          "Client"
+        ],
+        "summary": "Отредактировать данные по клиенту",
+        "operationId": "api/booking-car/client/editPUT",
+        "requestBody": {
+          "description": "Модель данных клиента",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Client"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Client"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Client"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/booking-car/client/experience": {
+      "get": {
+        "tags": [
+          "Client"
+        ],
+        "summary": "Получение данных по клиента",
+        "operationId": "api/booking-car/client/experienceGET",
+        "parameters": [
+          {
+            "name": "clientId",
+            "in": "query",
+            "description": "По конкретному клиенту",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/booking-car/report/client-to-booking": {
+      "get": {
+        "tags": [
+          "Report"
+        ],
+        "summary": "Получение данных по поездкам (всем или по клиенту)",
+        "operationId": "api/booking-car/report/client-to-bookingGET",
+        "parameters": [
+          {
+            "name": "clientId",
+            "in": "query",
+            "description": "По конкретному клиенту",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/booking-car/report/client-to-incident": {
+      "get": {
+        "tags": [
+          "Report"
+        ],
+        "summary": "Получение данных по инцидентам (всем или по клиенту)",
+        "operationId": "api/booking-car/report/client-to-incidentGET",
+        "parameters": [
+          {
+            "name": "clientId",
+            "in": "query",
+            "description": "По конкретному клиенту",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/booking-car/report/car-to-booking": {
+      "get": {
+        "tags": [
+          "Report"
+        ],
+        "summary": "Получение данных по ареднам (всем или по авто)",
+        "operationId": "api/booking-car/report/car-to-bookingGET",
+        "parameters": [
+          {
+            "name": "carId",
+            "in": "query",
+            "description": "По конкретному автомобилю",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/booking-car/report/car-to-incident": {
+      "get": {
+        "tags": [
+          "Report"
+        ],
+        "summary": "Получение данных по инцидентав у авто (всем или по авто)",
+        "operationId": "api/booking-car/report/car-to-incidentGET",
+        "parameters": [
+          {
+            "name": "carId",
+            "in": "query",
+            "description": "По конкретному автомобилю",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/booking-car/tech-support/auth": {
       "post": {
         "tags": [
           "TechSupport"
         ],
-        "summary": "Получение данных для авторизации",
+        "summary": "Авторизация сотрудника в приложении",
         "operationId": "api/booking-car/tech-support/authPOST",
         "requestBody": {
           "description": "Данные для авторизации",
@@ -847,7 +1376,7 @@
         "tags": [
           "TechSupport"
         ],
-        "summary": "Получение данных для авторизации",
+        "summary": "Создаем\\редактируем пользователя",
         "operationId": "api/booking-car/tech-support/authPUT",
         "requestBody": {
           "description": "Данные для создания клиента",
@@ -921,7 +1450,7 @@
         "tags": [
           "TechSupport"
         ],
-        "summary": "Получение данных по сотрудникм",
+        "summary": "Просматриваем всех сотрудников",
         "operationId": "api/booking-car/tech-support/staffGET",
         "responses": {
           "200": {
@@ -973,7 +1502,7 @@
         "tags": [
           "TechSupport"
         ],
-        "summary": "Получение данных по сотрудникм",
+        "summary": "Редактируем данные по сотрудникам",
         "operationId": "api/booking-car/tech-support/staffPUT",
         "requestBody": {
           "content": {
@@ -1156,6 +1685,11 @@
             "type": "string",
             "description": "Время начала поездки",
             "format": "date-time"
+          },
+          "tariffId": {
+            "type": "integer",
+            "description": "Ключ тарифа",
+            "format": "int32"
           }
         },
         "additionalProperties": false
@@ -1220,6 +1754,72 @@
         },
         "additionalProperties": false
       },
+      "Client": {
+        "type": "object",
+        "properties": {
+          "clientId": {
+            "type": "integer",
+            "description": "Ключ клиента",
+            "format": "int32"
+          },
+          "last_name": {
+            "type": "string",
+            "description": "Фамилия клиента",
+            "nullable": true
+          },
+          "first_name": {
+            "type": "string",
+            "description": "Имя клиента",
+            "nullable": true
+          },
+          "middle_name": {
+            "type": "string",
+            "description": "Отчество клиента",
+            "nullable": true
+          },
+          "birthdate": {
+            "type": "string",
+            "description": "Дата рождения",
+            "format": "date"
+          },
+          "phone": {
+            "type": "string",
+            "description": "Номер телефона клиента",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "description": "Почта клиента",
+            "nullable": true
+          },
+          "passport": {
+            "type": "string",
+            "description": "Паспорт клиента",
+            "nullable": true
+          },
+          "driverLicense": {
+            "type": "string",
+            "description": "Номер водительского",
+            "nullable": true
+          },
+          "dateStartDriving": {
+            "type": "string",
+            "description": "Дата начала вождения",
+            "format": "date"
+          },
+          "blocked": {
+            "type": "boolean",
+            "description": "Заблокирован ли пользователь"
+          },
+          "experience": {
+            "type": "integer",
+            "description": "Стаж вождения в годах",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "CreateUserDTO": {
         "type": "object",
         "properties": {
@@ -1251,27 +1851,27 @@
         "properties": {
           "incidentId": {
             "type": "integer",
-            "description": "Логин сотрудника",
-            "format": "int32"
-          },
-          "bookingId": {
-            "type": "integer",
-            "description": "Логин сотрудника",
+            "description": "Ключ инцидента",
             "format": "int32"
           },
           "clientGuilty": {
             "type": "boolean",
-            "description": "Логин сотрудника"
+            "description": "Виноват клиент?"
           },
           "description": {
             "type": "string",
-            "description": "Логин сотрудника",
+            "description": "Описание инцидента",
             "nullable": true
           },
           "nomerTicket": {
             "type": "string",
-            "description": "Логин сотрудника",
+            "description": "Номер обращения в ГАИ",
             "nullable": true
+          },
+          "bookingId": {
+            "type": "integer",
+            "description": "Ключ бронирования",
+            "format": "int32"
           }
         },
         "additionalProperties": false

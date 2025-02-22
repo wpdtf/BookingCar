@@ -31,4 +31,9 @@ public class Booking
     /// Время начала поездки
     /// </summary>
     public DateTime BookingStart { get; set; }
+
+    /// <summary>
+    /// Ключ тарифа
+    /// </summary>
+    public int TariffId { get; set; }
 }

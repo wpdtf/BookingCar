@@ -26,3 +26,4 @@ global using Microsoft.Extensions.DependencyInjection;
 global using Microsoft.Extensions.Hosting;
 global using Microsoft.Extensions.Options;
 global using Microsoft.OpenApi.Models;
+global using Microsoft.EntityFrameworkCore.Infrastructure;

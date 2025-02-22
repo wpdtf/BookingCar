@@ -12,10 +12,8 @@ internal static class Program
         builder.Services.AddOptionsWithValidateOnStart<AppSettings>().Bind(builder.Configuration).ValidateDataAnnotations();
         var configuration = builder.Configuration.Get<AppSettings>();
 
-        builder.Services.AddDbContext<GeneralRepository>(x =>
-            x.UseSqlServer(configuration.ConnectionStrings.MsSqlConnection), ServiceLifetime.Singleton);
-        builder.Services.AddDbContext<BookingRepository>(x =>
-            x.UseSqlServer(configuration.ConnectionStrings.MsSqlConnection), ServiceLifetime.Singleton);
+        builder.Services.AddDbContext<DataBaseContext>(x =>
+            x.UseSqlServer(configuration.ConnectionStrings.MsSqlConnection));
 
         builder.Services.AddHttpLogging(x => x.LoggingFields = HttpLoggingFields.ResponseBody | HttpLoggingFields.RequestBody |
             HttpLoggingFields.RequestProperties | HttpLoggingFields.ResponseStatusCode);
@@ -41,13 +39,11 @@ internal static class Program
         builder.Services.AddProblemDetails(options => options.CustomizeProblemDetails = (context) =>
         {
             var ex = context.HttpContext.Features.Get<IExceptionHandlerFeature>()?.Error;
-            int code = -1;
             if (ex is SqlException sqlException)
             {
                 context.ProblemDetails.Detail = ex.Message;
             }
-
-            context.ProblemDetails.Extensions["errorCode"] = code;
+            context.ProblemDetails.Extensions["errorCode"] = -1;
         });
 
         builder.Services.AddMemoryCache();
@@ -55,6 +51,8 @@ internal static class Program
 
         builder.Services.AddScoped<IGeneralRepository, GeneralRepository>();
         builder.Services.AddScoped<IBookingRepository, BookingRepository>();
+        builder.Services.AddScoped<IClientRepository, ClientRepository>();
+        builder.Services.AddScoped<IReportRepository, ReportRepository>();
 
         builder.Services.AddResponseCaching();
 
