@@ -1,6 +1,3 @@
-using Microsoft.AspNetCore.Diagnostics;
-using Microsoft.Data.SqlClient;
-
 namespace BookingCar.Api;
 
 internal static class Program

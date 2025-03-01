@@ -1,0 +1,77 @@
+namespace Booking.UI;
+
+public partial class FormMain : Form
+{
+    private Form _acriveForm;
+
+    public FormMain()
+    {
+        InitializeComponent();
+    }
+
+    private void OpenForm(Form childForm)
+    {
+        if (_acriveForm != null)
+            _acriveForm.Close();
+        _acriveForm = childForm;
+        childForm.TopLevel = false;
+        childForm.FormBorderStyle = FormBorderStyle.None;
+        childForm.Dock = DockStyle.Fill;
+        guna2ShadowPanel1.Controls.Add(childForm);
+        guna2ShadowPanel1.Tag = childForm;
+        childForm.BringToFront();
+        childForm.Show();
+    }
+    private void FormMain_Load(object sender, EventArgs e)
+    {
+        SetAccess(CurrentUser.Role);
+    }
+
+    private void SetAccess(string role)
+    {
+        switch (role.ToLower())
+        {
+            case "менеджер":
+                Guna2Button7.Dispose();
+                break;
+            case "макретолог":
+                Guna2Button1.Dispose();
+                Guna2Button3.Dispose();
+                Guna2Button4.Dispose();
+                Guna2Button5.Dispose();
+                Guna2Button6.Dispose();
+                Guna2Button7.Dispose();
+                break;
+        }
+    }
+
+    private void Guna2Button1_Click(object sender, EventArgs e)
+    {
+        //openForm(new FormLK());
+    }
+
+    private void Guna2Button2_Click(object sender, EventArgs e)
+    {
+        //openForm(new FormClient());
+    }
+
+    private void Guna2Button6_Click(object sender, EventArgs e)
+    {
+       // openForm(new FormTransaction());
+    }
+
+    private void Guna2Button5_Click(object sender, EventArgs e)
+    {
+        //openForm(new FormAdmin());
+    }
+
+    private void Guna2Button3_Click(object sender, EventArgs e)
+    {
+        Application.Exit();
+    }
+
+    private void Guna2Button4_Click(object sender, EventArgs e)
+    {
+        OpenForm(new FormStaff());
+    }
+}

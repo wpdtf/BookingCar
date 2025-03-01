@@ -1,5 +1,3 @@
-using BookingCar.Api.Domain.Entities;
-
 namespace BookingCar.Api.Controllers;
 
 /// <summary>

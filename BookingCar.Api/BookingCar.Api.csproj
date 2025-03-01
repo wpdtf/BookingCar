@@ -18,6 +18,11 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Booking.Domain\Booking.Domain.csproj" />
+    <ProjectReference Include="..\BookingCar.Domain\BookingCar.Domain.csproj" />
+  </ItemGroup>
+
   <PropertyGroup>
     <OpenApiDocumentsDirectory>../BookingCar.Client</OpenApiDocumentsDirectory>
     <OpenApiGenerateDocuments>true</OpenApiGenerateDocuments>

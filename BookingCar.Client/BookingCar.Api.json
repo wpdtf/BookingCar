@@ -1642,12 +1642,10 @@
         "properties": {
           "login": {
             "type": "string",
-            "description": "Логин сотрудника",
             "nullable": true
           },
           "password": {
             "type": "string",
-            "description": "Пароль сотрудника",
             "nullable": true
           }
         },
@@ -1658,37 +1656,30 @@
         "properties": {
           "bookingId": {
             "type": "integer",
-            "description": "Ключ брования",
             "format": "int32"
           },
           "carId": {
             "type": "integer",
-            "description": "Ключ автомобиля",
             "format": "int32"
           },
           "clientId": {
             "type": "integer",
-            "description": "Ключ клиента",
             "format": "int32"
           },
           "status": {
             "type": "integer",
-            "description": "Статус бронирования",
             "format": "int32"
           },
           "bookingTime": {
             "type": "integer",
-            "description": "Время создания бронирования",
             "format": "int32"
           },
           "bookingStart": {
             "type": "string",
-            "description": "Время начала поездки",
             "format": "date-time"
           },
           "tariffId": {
             "type": "integer",
-            "description": "Ключ тарифа",
             "format": "int32"
           }
         },
@@ -1699,56 +1690,45 @@
         "properties": {
           "carId": {
             "type": "integer",
-            "description": "Ключ автомобиля",
             "format": "int32"
           },
           "brand": {
             "type": "string",
-            "description": "брэнд",
             "nullable": true
           },
           "mark": {
             "type": "string",
-            "description": "Марка",
             "nullable": true
           },
           "yearStart": {
             "type": "integer",
-            "description": "Год производитства",
             "format": "int32"
           },
           "color": {
             "type": "string",
-            "description": "Цвеь",
             "nullable": true
           },
           "carNumber": {
             "type": "string",
-            "description": "Номер автомобиля",
             "nullable": true
           },
           "vin": {
             "type": "string",
-            "description": "Вин номер автомобиля",
             "nullable": true
           },
           "active": {
-            "type": "boolean",
-            "description": "Активен ли автомобиль"
+            "type": "boolean"
           },
           "minimalExperience": {
             "type": "integer",
-            "description": "Минимальный стаж автомобиля",
             "format": "int32"
           },
           "class": {
             "type": "integer",
-            "description": "Класс автомобиля",
             "format": "int32"
           },
           "classTxt": {
             "type": "string",
-            "description": "Класс автомобиля (текстом)",
             "nullable": true
           }
         },
@@ -1759,61 +1739,49 @@
         "properties": {
           "clientId": {
             "type": "integer",
-            "description": "Ключ клиента",
             "format": "int32"
           },
           "last_name": {
             "type": "string",
-            "description": "Фамилия клиента",
             "nullable": true
           },
           "first_name": {
             "type": "string",
-            "description": "Имя клиента",
             "nullable": true
           },
           "middle_name": {
             "type": "string",
-            "description": "Отчество клиента",
             "nullable": true
           },
           "birthdate": {
             "type": "string",
-            "description": "Дата рождения",
-            "format": "date"
+            "format": "date-time"
           },
           "phone": {
             "type": "string",
-            "description": "Номер телефона клиента",
             "nullable": true
           },
           "email": {
             "type": "string",
-            "description": "Почта клиента",
             "nullable": true
           },
           "passport": {
             "type": "string",
-            "description": "Паспорт клиента",
             "nullable": true
           },
           "driverLicense": {
             "type": "string",
-            "description": "Номер водительского",
             "nullable": true
           },
           "dateStartDriving": {
             "type": "string",
-            "description": "Дата начала вождения",
-            "format": "date"
+            "format": "date-time"
           },
           "blocked": {
-            "type": "boolean",
-            "description": "Заблокирован ли пользователь"
+            "type": "boolean"
           },
           "experience": {
             "type": "integer",
-            "description": "Стаж вождения в годах",
             "format": "int32",
             "nullable": true
           }
@@ -1825,23 +1793,19 @@
         "properties": {
           "login": {
             "type": "string",
-            "description": "Логин сотрудника",
             "nullable": true
           },
           "password": {
             "type": "string",
-            "description": "Пароль сотрудника",
             "nullable": true
           },
           "userId": {
             "type": "integer",
-            "description": "Пароль сотрудника",
             "format": "int32"
           },
           "dateLactActual": {
             "type": "string",
-            "description": "Пароль сотрудника",
-            "format": "date"
+            "format": "date-time"
           }
         },
         "additionalProperties": false
@@ -1851,26 +1815,21 @@
         "properties": {
           "incidentId": {
             "type": "integer",
-            "description": "Ключ инцидента",
             "format": "int32"
           },
           "clientGuilty": {
-            "type": "boolean",
-            "description": "Виноват клиент?"
+            "type": "boolean"
           },
           "description": {
             "type": "string",
-            "description": "Описание инцидента",
             "nullable": true
           },
           "nomerTicket": {
             "type": "string",
-            "description": "Номер обращения в ГАИ",
             "nullable": true
           },
           "bookingId": {
             "type": "integer",
-            "description": "Ключ бронирования",
             "format": "int32"
           }
         },
@@ -1908,46 +1867,37 @@
         "properties": {
           "userId": {
             "type": "integer",
-            "description": "Логин сотрудника",
             "format": "int32"
           },
           "last_name": {
             "type": "string",
-            "description": "Логин сотрудника",
             "nullable": true
           },
           "first_name": {
             "type": "string",
-            "description": "Логин сотрудника",
             "nullable": true
           },
           "middle_name": {
             "type": "string",
-            "description": "Логин сотрудника",
             "nullable": true
           },
           "phone": {
             "type": "string",
-            "description": "Логин сотрудника",
             "nullable": true
           },
           "birthdate": {
             "type": "string",
-            "description": "Логин сотрудника",
-            "format": "date"
+            "format": "date-time"
           },
           "dismissed": {
-            "type": "boolean",
-            "description": "Логин сотрудника"
+            "type": "boolean"
           },
           "position": {
             "type": "integer",
-            "description": "Логин сотрудника",
             "format": "int32"
           },
           "positionTxt": {
             "type": "string",
-            "description": "Логин сотрудника",
             "nullable": true
           }
         },
@@ -1958,22 +1908,18 @@
         "properties": {
           "tariffId": {
             "type": "integer",
-            "description": "Ключ тарифа",
             "format": "int32"
           },
           "name": {
             "type": "string",
-            "description": "Наименование тарифа",
             "nullable": true
           },
           "price": {
             "type": "integer",
-            "description": "Стоимость тарифа в час",
             "format": "int32"
           },
           "description": {
             "type": "string",
-            "description": "Описание тарифа",
             "nullable": true
           }
         },
