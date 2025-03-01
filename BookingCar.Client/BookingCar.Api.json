@@ -1813,22 +1813,22 @@
       "Incident": {
         "type": "object",
         "properties": {
-          "incidentId": {
+          "IncidentId": {
             "type": "integer",
             "format": "int32"
           },
-          "clientGuilty": {
+          "ClientGuilty": {
             "type": "boolean"
           },
-          "description": {
+          "Description": {
             "type": "string",
             "nullable": true
           },
-          "nomerTicket": {
+          "NomerTicket": {
             "type": "string",
             "nullable": true
           },
-          "bookingId": {
+          "BookingId": {
             "type": "integer",
             "format": "int32"
           }

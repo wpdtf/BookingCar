@@ -1,42 +1,37 @@
 using System;
+using System.ComponentModel;
+using System.Text.Json.Serialization;
 
 namespace BookingCar.Domain.Entities
 {
     public class Booking
     {
-        /// <summary>
-        /// Ключ брования
-        /// </summary>
+        [JsonPropertyName("bookingId")]
+        [DisplayName("Ключ брования")]
         public int BookingId { get; set; }
 
-        /// <summary>
-        /// Ключ автомобиля
-        /// </summary>
+        [JsonPropertyName("carId")]
+        [DisplayName("Ключ автомобиля")]
         public int CarId { get; set; }
 
-        /// <summary>
-        /// Ключ клиента
-        /// </summary>
+        [JsonPropertyName("clientId")]
+        [DisplayName("Ключ клиента")]
         public int ClientId { get; set; }
 
-        /// <summary>
-        /// Статус бронирования
-        /// </summary>
+        [JsonPropertyName("status")]
+        [DisplayName("Статус бронирования")]
         public int Status { get; set; }
 
-        /// <summary>
-        /// Время создания бронирования
-        /// </summary>
+        [JsonPropertyName("bookingTime")]
+        [DisplayName("Время создания бронирования")]
         public int BookingTime { get; set; }
 
-        /// <summary>
-        /// Время начала поездки
-        /// </summary>
+        [JsonPropertyName("bookingStart")]
+        [DisplayName("Время начала поездки")]
         public DateTime BookingStart { get; set; }
 
-        /// <summary>
-        /// Ключ тарифа
-        /// </summary>
+        [JsonPropertyName("tariffId")]
+        [DisplayName("Ключ тарифа")]
         public int TariffId { get; set; }
     }
 }

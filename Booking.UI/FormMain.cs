@@ -32,7 +32,7 @@ public partial class FormMain : Form
         switch (role.ToLower())
         {
             case "менеджер":
-                Guna2Button7.Dispose();
+                Guna2Button4.Dispose();
                 break;
             case "макретолог":
                 Guna2Button1.Dispose();
@@ -40,14 +40,13 @@ public partial class FormMain : Form
                 Guna2Button4.Dispose();
                 Guna2Button5.Dispose();
                 Guna2Button6.Dispose();
-                Guna2Button7.Dispose();
                 break;
         }
     }
 
     private void Guna2Button1_Click(object sender, EventArgs e)
     {
-        //openForm(new FormLK());
+        OpenForm(new FormCar());
     }
 
     private void Guna2Button2_Click(object sender, EventArgs e)

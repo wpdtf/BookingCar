@@ -1,25 +1,24 @@
+using System.ComponentModel;
+using System.Text.Json.Serialization;
+
 namespace BookingCar.Domain.Entities
 {
     public class Tariff
     {
-        /// <summary>
-        /// Ключ тарифа
-        /// </summary>
+        [JsonPropertyName("tariffId")]
+        [DisplayName("Ключ тарифа")]
         public int TariffId { get; set; }
-
-        /// <summary>
-        /// Наименование тарифа
-        /// </summary>
+        
+        [JsonPropertyName("name")]
+        [DisplayName("Наименование")]
         public string Name { get; set; }
 
-        /// <summary>
-        /// Стоимость тарифа в час
-        /// </summary>
+        [JsonPropertyName("price")]
+        [DisplayName("Цена")]
         public int Price { get; set; }
 
-        /// <summary>
-        /// Описание тарифа
-        /// </summary>
+        [JsonPropertyName("description")]
+        [DisplayName("Описание")]
         public string Description { get; set; }
     }
 }

@@ -1,15 +1,16 @@
+using System.ComponentModel;
+using System.Text.Json.Serialization;
+
 namespace BookingCar.Domain.Entities
 {
     public class TariffCar
     {
-        /// <summary>
-        /// Ключ автомобиля
-        /// </summary>
+        [JsonPropertyName("CarId")]
+        [DisplayName("Ключ автомобиля")]
         public int CarId { get; set; }
 
-        /// <summary>
-        /// Ключ тарифа
-        /// </summary>
+        [JsonPropertyName("TariffId")]
+        [DisplayName("Ключ тарифа")]
         public int TariffId { get; set; }
     }
 }

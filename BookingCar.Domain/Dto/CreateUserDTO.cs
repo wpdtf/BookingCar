@@ -1,5 +1,3 @@
-using System;
-
 namespace BookingCar.Domain.Dto
 {
     public class CreateUserDTO

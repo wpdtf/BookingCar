@@ -1,20 +1,20 @@
 namespace Booking.UI
 {
-    public partial class FormStaff : Form
+    public partial class FormCar : Form
     {
-        private List<Staff> _staff;
+        private List<Car> _car;
 
-        public FormStaff()
+        public FormCar()
         {
             InitializeComponent();
         }
 
         public async Task UpdateDateAsync()
         {
-            var api = new ApiClient<List<Staff>>(new Uri("http://localhost:5000/api/booking-car"));
+            var api = new ApiClient<List<Car>>(new Uri("http://localhost:5000/api/booking-car"));
 
-            _staff = await api.GetAsync("tech-support/staff");
-            guna2DataGridView1.DataSource = _staff;
+            _car = await api.GetAsync("booking/car");
+            guna2DataGridView1.DataSource = _car;
         }
 
         private async void FormAdmin_Load(object sender, EventArgs e)
@@ -30,26 +30,28 @@ namespace Booking.UI
             }
 
             var selectedRow = guna2DataGridView1.SelectedRows[0];
-            Staff staff = new()
+            Car car = new()
             {
-                UserId = (int)selectedRow.Cells[0].Value,
-                Last_name = selectedRow.Cells[1].Value.ToString(),
-                First_name = selectedRow.Cells[2].Value.ToString(),
-                Middle_name = selectedRow.Cells[3].Value.ToString(),
-                Phone = selectedRow.Cells[4].Value.ToString(),
-                Birthdate = (DateTime)selectedRow.Cells[5].Value,
-                Dismissed = (bool)selectedRow.Cells[6].Value,
-                Position = (short)selectedRow.Cells[7].Value,
-                PositionTxt = ""
+                CarId = (int)selectedRow.Cells[0].Value,
+                Brand = selectedRow.Cells[1].Value.ToString(),
+                Mark = selectedRow.Cells[2].Value.ToString(),
+                YearStart = (int)selectedRow.Cells[3].Value,
+                Color = selectedRow.Cells[4].Value.ToString(),
+                CarNumber = selectedRow.Cells[5].Value.ToString(),
+                VIN = selectedRow.Cells[6].Value.ToString(),
+                Active = (bool)selectedRow.Cells[7].Value,
+                MinimalExperience = (int)selectedRow.Cells[8].Value,
+                Class = (int)selectedRow.Cells[9].Value,
+                ClassTxt = ""
             };
 
-            FormEditStaff edit = new(2, staff, this);
+            FormEditCar edit = new(2, car, this);
             edit.ShowDialog();
         }
 
         private bool IsSelecedRow()
         {
-            if (guna2DataGridView1.SelectedRows.Count < 0 || _staff.Count == 0)
+            if (guna2DataGridView1.SelectedRows.Count < 0 || _car.Count == 0)
             {
                 MessageBox.Show("Выберите сотрудника для данного действия.", "Уведомление", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return false;
@@ -63,12 +65,11 @@ namespace Booking.UI
             {
                 searchText = searchText.Trim().ToLower();
 
-                var filters = _staff
+                var filters = _car
                     .Where(p =>
-                        p.First_name.ToLower().Contains(searchText) ||
-                        p.Last_name.ToLower().Contains(searchText) ||
-                        p.Middle_name.ToLower().Contains(searchText) ||
-                        p.Phone.ToLower().Contains(searchText)
+                        p.Brand.ToLower().Contains(searchText) ||
+                        p.Mark.ToLower().Contains(searchText) ||
+                        p.VIN.ToLower().Contains(searchText)
                     )
                     .ToList();
 
@@ -76,7 +77,7 @@ namespace Booking.UI
             }
             else
             {
-                guna2DataGridView1.DataSource = _staff;
+                guna2DataGridView1.DataSource = _car;
             }
         }
 
@@ -87,7 +88,7 @@ namespace Booking.UI
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-            FormEditStaff formEdit = new(1, new(), this);
+            FormEditCar formEdit = new(1, new(), this);
             formEdit.ShowDialog();
         }
 

@@ -1,67 +1,58 @@
 using System;
+using System.ComponentModel;
+using System.Text.Json.Serialization;
 
 namespace BookingCar.Domain.Entities
 {
     public class Client
     {
-        /// <summary>
-        /// Ключ клиента
-        /// </summary>
+
+        [JsonPropertyName("clientId")]
+        [DisplayName("Ключ клиента")]
         public int ClientId { get; set; }
 
-        /// <summary>
-        /// Фамилия клиента
-        /// </summary>
+        [JsonPropertyName("last_name")]
+        [DisplayName("Фамилия клиента")]
         public string Last_name { get; set; }
 
-        /// <summary>
-        /// Имя клиента
-        /// </summary>
+        [JsonPropertyName("first_name")]
+        [DisplayName("Имя клиента")]
         public string First_name { get; set; }
 
-        /// <summary>
-        /// Отчество клиента
-        /// </summary>
+        [JsonPropertyName("middle_name")]
+        [DisplayName("Отчество клиента")]
         public string Middle_name { get; set; }
 
-        /// <summary>
-        /// Дата рождения
-        /// </summary>
+        [JsonPropertyName("birthdate")]
+        [DisplayName("Дата рождения")]
         public DateTime Birthdate { get; set; }
 
-        /// <summary>
-        /// Номер телефона клиента
-        /// </summary>
+        [JsonPropertyName("phone")]
+        [DisplayName("Номер телефона клиента")]
         public string Phone { get; set; }
 
-        /// <summary>
-        /// Почта клиента
-        /// </summary>
+        [JsonPropertyName("email")]
+        [DisplayName("Почта клиента")]
         public string Email { get; set; }
 
-        /// <summary>
-        /// Паспорт клиента
-        /// </summary>
+        [JsonPropertyName("passport")]
+        [DisplayName("Паспорт клиента")]
         public string Passport { get; set; }
 
-        /// <summary>
-        /// Номер водительского
-        /// </summary>
+        [JsonPropertyName("driverLicense")]
+        [DisplayName("Номер водительского")]
         public string DriverLicense { get; set; }
 
-        /// <summary>
-        /// Дата начала вождения
-        /// </summary>
+        [JsonPropertyName("dateStartDriving")]
+        [DisplayName("Дата начала вождения")]
         public DateTime DateStartDriving { get; set; }
 
-        /// <summary>
-        /// Заблокирован ли пользователь
-        /// </summary>
+        [JsonPropertyName("blocked")]
+        [DisplayName("Заблокирован")]
         public bool Blocked { get; set; }
 
-        /// <summary>
-        /// Стаж вождения в годах
-        /// </summary>
+        [JsonPropertyName("experience")]
+        [DisplayName("Стаж")]
         public int? Experience { get; set; }
     }
 }
