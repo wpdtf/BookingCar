@@ -1,3 +1,6 @@
+using Guna.UI2.WinForms;
+using System.Text.RegularExpressions;
+
 namespace Booking.UI.FormDialog;
 
 public partial class FormEditCar : Form
@@ -38,6 +41,11 @@ public partial class FormEditCar : Form
 
     private async void guna2Button2_Click_1(object sender, EventArgs e)
     {
+        if (!CheckValidation())
+        {
+            return;
+        }
+
         Car car = new()
         {
             CarId = CarModel.CarId,
@@ -59,5 +67,67 @@ public partial class FormEditCar : Form
         await CarForm.UpdateDateAsync();
         this.Close();
         return;
+    }
+
+    private bool CheckValidation()
+    {
+        var validationMessage = "";
+
+        if (string.IsNullOrEmpty(guna2TextBox1.Text))
+        {
+            validationMessage = "Бренд не может быть пустой.";
+        }
+
+        if (guna2TextBox1.Text.Length < 2 || guna2TextBox1.Text.Length > 50)
+        {
+            validationMessage = "Бренд должен содержать от 2 до 50 символов.";
+        }
+
+        if (ContainsDigits(guna2TextBox1.Text))
+        {
+            validationMessage = "Бренд не может содержать цифры.";
+        }
+
+        if (string.IsNullOrEmpty(guna2TextBox2.Text))
+        {
+            validationMessage = "Марка не может быть пустым.";
+        }
+
+        if (guna2TextBox2.Text.Length < 2 || guna2TextBox2.Text.Length > 50)
+        {
+            validationMessage = "Марка должна содержать от 2 до 50 символов.";
+        }
+
+        if (ContainsDigits(guna2TextBox2.Text))
+        {
+            validationMessage = "Марка не может содержать цифры.";
+        }
+
+        if (ContainsDigits(guna2TextBox4.Text))
+        {
+            validationMessage = "Цвет не может содержать цифры.";
+        }
+
+        if (Convert.ToInt32(guna2TextBox3.Text) < 2000 || Convert.ToInt32(guna2TextBox3.Text) > DateTime.Now.Year)
+        {
+            validationMessage = "Неккоректная дата производства";
+        }
+
+        if (validationMessage.Count() > 0)
+        {
+            MessageBox.Show(validationMessage, "Уведомление", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            return false;
+        }
+        return true;
+    }
+
+    /// <summary>
+    /// Метод для проверки строки на наличие цифр.
+    /// </summary>
+    /// <param name="input">Строка для проверки.</param>
+    /// <returns>True, если строка содержит цифры, иначе False.</returns>
+    private bool ContainsDigits(string input)
+    {
+        return input.Any(char.IsDigit);
     }
 }

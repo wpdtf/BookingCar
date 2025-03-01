@@ -91,16 +91,5 @@ namespace Booking.UI
             FormEditCar formEdit = new(1, new(), this);
             formEdit.ShowDialog();
         }
-
-        private void guna2Button3_Click(object sender, EventArgs e)
-        {
-            if (!IsSelecedRow())
-            {
-                return;
-            }
-
-            FormListLogin formLogin = new((int)guna2DataGridView1.SelectedRows[0].Cells[0].Value);
-            formLogin.ShowDialog();
-        }
     }
 }

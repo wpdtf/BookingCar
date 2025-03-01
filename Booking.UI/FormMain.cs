@@ -56,7 +56,7 @@ public partial class FormMain : Form
 
     private void Guna2Button6_Click(object sender, EventArgs e)
     {
-       // openForm(new FormTransaction());
+        // openForm(new FormTransaction());
     }
 
     private void Guna2Button5_Click(object sender, EventArgs e)
@@ -72,5 +72,10 @@ public partial class FormMain : Form
     private void Guna2Button4_Click(object sender, EventArgs e)
     {
         OpenForm(new FormStaff());
+    }
+
+    private void guna2Button7_Click(object sender, EventArgs e)
+    {
+        OpenForm(new FormClient());
     }
 }

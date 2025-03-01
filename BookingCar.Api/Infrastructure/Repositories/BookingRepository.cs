@@ -42,12 +42,12 @@ public class BookingRepository(DataBaseContext dbContext) : IBookingRepository
         await _dbContext.ExecuteSqlAsync(sql);
     }
 
-    public async Task<IEnumerable<TariffCar>> ViewTariffToCarAsync(int tariffId, int carId)
+    public async Task<IEnumerable<Tariff>> ViewTariffToCarAsync(int tariffId, int carId)
     {
         FormattableString sql = @$"dbo.ПросмотрТарифаИАвто 
             @tariffId = {tariffId}, @carId = {carId}";
 
-        return await Task.Run(() => _dbContext.SqlQuery<TariffCar>(sql));
+        return await Task.Run(() => _dbContext.SqlQuery<Tariff>(sql));
     }
 
     public async Task<IEnumerable<Booking>> ViewBookingAsync(int bookingId)

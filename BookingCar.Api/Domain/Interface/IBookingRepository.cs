@@ -38,7 +38,7 @@ public interface IBookingRepository
     /// </summary>
     /// <param name="tariffId"></param>
     /// <param name="carId"></param>
-    Task<IEnumerable<TariffCar>> ViewTariffToCarAsync(int tariffId, int carId);
+    Task<IEnumerable<Tariff>> ViewTariffToCarAsync(int tariffId, int carId);
 
     /// <summary>
     /// Просмотр всех бронирований
