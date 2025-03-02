@@ -1,3 +1,5 @@
+using Microsoft.Extensions.Options;
+
 namespace BookingCar.Api;
 
 internal static class Program
@@ -19,7 +21,8 @@ internal static class Program
         {
             x.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull;
             x.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase;
-            x.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+            x.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter(JsonNamingPolicy.CamelCase, allowIntegerValues: true));
+            x.JsonSerializerOptions.NumberHandling = JsonNumberHandling.AllowNamedFloatingPointLiterals;
         });
         builder.Services.AddSwaggerGen(options =>
         {

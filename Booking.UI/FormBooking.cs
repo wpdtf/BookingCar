@@ -1,5 +1,6 @@
 using BookingCar.Domain.Declare;
 using BookingCar.Domain.Entities;
+using Guna.UI2.WinForms;
 using Windows.Media.Protection.PlayReady;
 using LocalBooking = BookingCar.Domain.Entities.Booking;
 using LocalClient = BookingCar.Domain.Entities.Client;
@@ -152,6 +153,22 @@ namespace Booking.UI
         private async void guna2DataGridView1_SelectionChanged(object sender, EventArgs e)
         {
             await UpdateOptionallyInfoAsync();
+        }
+
+        private void guna2Button3_Click(object sender, EventArgs e)
+        {
+            if (!IsSelecedRow())
+            {
+                return;
+            }
+
+            Incident incident = new()
+            {
+                BookingId = (int)guna2DataGridView1.SelectedRows[0].Cells[0].Value
+            };
+
+            FormEditIncident edit = new(2, incident);
+            edit.ShowDialog();
         }
     }
 }

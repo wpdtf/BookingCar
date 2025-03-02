@@ -21,6 +21,7 @@ namespace BookingCar.Domain.Entities
 
         [JsonPropertyName("status")]
         [DisplayName("Статус бронирования")]
+        [JsonConverter(typeof(JsonNumberEnumConverter<statusBooking>))]
         public statusBooking Status { get; set; }
 
         [JsonPropertyName("bookingTime")]

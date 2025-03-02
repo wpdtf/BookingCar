@@ -5,23 +5,23 @@ namespace BookingCar.Domain.Entities
 {
     public class Incident
     {
-        [JsonPropertyName("IncidentId")]
+        [JsonPropertyName("incidentId")]
         [DisplayName("Ключ инцидента")]
         public int IncidentId { get; set; }
 
-        [JsonPropertyName("ClientGuilty")]
+        [JsonPropertyName("clientGuilty")]
         [DisplayName("Виноват клиент?")]
         public bool ClientGuilty { get; set; }
 
-        [JsonPropertyName("Description")]
+        [JsonPropertyName("description")]
         [DisplayName("Описание инцидента")]
         public string Description { get; set; }
 
-        [JsonPropertyName("NomerTicket")]
+        [JsonPropertyName("nomerTicket")]
         [DisplayName("Номер обращения в ГАИ")]
         public string NomerTicket { get; set; }
 
-        [JsonPropertyName("BookingId")]
+        [JsonPropertyName("bookingId")]
         [DisplayName("Ключ бронирования")]
         public int BookingId { get; set; }
     }

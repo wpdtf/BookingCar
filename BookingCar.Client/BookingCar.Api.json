@@ -1658,8 +1658,7 @@
             "format": "int32"
           },
           "status": {
-            "type": "integer",
-            "format": "int32"
+            "$ref": "#/components/schemas/statusBooking"
           },
           "bookingTime": {
             "type": "integer",
@@ -1804,22 +1803,22 @@
       "Incident": {
         "type": "object",
         "properties": {
-          "IncidentId": {
+          "incidentId": {
             "type": "integer",
             "format": "int32"
           },
-          "ClientGuilty": {
+          "clientGuilty": {
             "type": "boolean"
           },
-          "Description": {
+          "description": {
             "type": "string",
             "nullable": true
           },
-          "NomerTicket": {
+          "nomerTicket": {
             "type": "string",
             "nullable": true
           },
-          "BookingId": {
+          "bookingId": {
             "type": "integer",
             "format": "int32"
           }
@@ -1915,6 +1914,15 @@
           }
         },
         "additionalProperties": false
+      },
+      "statusBooking": {
+        "enum": [
+          "create",
+          "payment",
+          "сancellation",
+          "end"
+        ],
+        "type": "string"
       }
     }
   }

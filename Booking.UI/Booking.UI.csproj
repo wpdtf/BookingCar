@@ -30,6 +30,9 @@
     <Compile Update="FormDialog\FormEditBooking.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="FormDialog\FormEditIncident.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="FormDialog\FormEditTariff.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -46,6 +49,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="FormCar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormIncident.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="FormTariff.cs">

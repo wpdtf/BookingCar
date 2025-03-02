@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
 namespace BookingCar.Domain.Declare {
-    public enum statusBooking
+    public enum statusBooking : int
     {
         [Display(Name = "Создан")]
         Create = 1,

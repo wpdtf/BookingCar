@@ -59,7 +59,7 @@ public partial class FormMain : Form
 
     private void Guna2Button6_Click(object sender, EventArgs e)
     {
-        // openForm(new FormTransaction());
+        OpenForm(new FormIncident());
     }
 
     private void Guna2Button5_Click(object sender, EventArgs e)

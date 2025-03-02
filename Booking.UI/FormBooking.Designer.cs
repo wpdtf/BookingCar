@@ -180,6 +180,7 @@ namespace Booking.UI
             guna2Button3.Size = new Size(150, 39);
             guna2Button3.TabIndex = 18;
             guna2Button3.Text = "Создать инцидент";
+            guna2Button3.Click += guna2Button3_Click;
             // 
             // Guna2Button1
             // 
