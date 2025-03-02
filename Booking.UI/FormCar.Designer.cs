@@ -78,10 +78,10 @@ namespace Booking.UI
             guna2DataGridView1.Anchor = AnchorStyles.Left;
             guna2DataGridView1.BackgroundColor = Color.WhiteSmoke;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(51, 182, 185);
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(255, 54, 50);
             dataGridViewCellStyle2.Font = new Font("Segoe UI", 11.25F);
             dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(51, 182, 185);
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(255, 54, 50);
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
@@ -309,10 +309,10 @@ namespace Booking.UI
             guna2DataGridView2.Anchor = AnchorStyles.Right;
             guna2DataGridView2.BackgroundColor = Color.WhiteSmoke;
             dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = Color.FromArgb(51, 182, 185);
+            dataGridViewCellStyle6.BackColor = Color.FromArgb(255, 54, 50);
             dataGridViewCellStyle6.Font = new Font("Segoe UI", 11.25F);
             dataGridViewCellStyle6.ForeColor = Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(51, 182, 185);
+            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(255, 54, 50);
             dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
             guna2DataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;

@@ -119,10 +119,10 @@ namespace Booking.UI.FormDialog
             guna2DataGridView1.BackgroundColor = Color.WhiteSmoke;
             guna2DataGridView1.ClipboardCopyMode = DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(51, 182, 185);
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(255, 54, 50);
             dataGridViewCellStyle2.Font = new Font("Segoe UI", 11.25F);
             dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(51, 182, 185);
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(255, 54, 50);
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
