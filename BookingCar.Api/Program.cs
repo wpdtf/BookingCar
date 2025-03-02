@@ -46,9 +46,6 @@ internal static class Program
             context.ProblemDetails.Extensions["errorCode"] = -1;
         });
 
-        builder.Services.AddMemoryCache();
-        builder.Services.AddSingleton<IIdempotencyCacheService, IdempotencyCacheService>();
-
         builder.Services.AddScoped<IGeneralRepository, GeneralRepository>();
         builder.Services.AddScoped<IBookingRepository, BookingRepository>();
         builder.Services.AddScoped<IClientRepository, ClientRepository>();
@@ -67,9 +64,6 @@ internal static class Program
             app.UseSwagger();
             app.UseSwaggerUI();
         }
-
-        app.UseMiddleware<IdempotencyMiddleware>();
-        app.UseResponseCaching();
 
         app.UseHttpLogging();
         _ = app.Environment.IsProduction() is false
