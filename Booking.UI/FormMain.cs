@@ -32,16 +32,15 @@ public partial class FormMain : Form
         switch (role.ToLower())
         {
             case "менеджер":
+                Guna2Button2.Dispose();
                 Guna2Button4.Dispose();
-                guna2Button7.Dispose();
-                guna2Button8.Dispose();
                 break;
-            case "макретолог":
+            case "маркетолог":
                 Guna2Button1.Dispose();
-                Guna2Button3.Dispose();
+                Guna2Button6.Dispose();
                 Guna2Button4.Dispose();
                 Guna2Button5.Dispose();
-                Guna2Button6.Dispose();
+                guna2Button8.Dispose();
                 guna2Button7.Dispose();
                 break;
         }

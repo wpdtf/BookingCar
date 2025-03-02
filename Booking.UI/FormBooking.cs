@@ -134,19 +134,19 @@ namespace Booking.UI
             {
                 guna2DataGridView1.DataSource = _booking;
             }
-
-            isUpdate = false;
-            await UpdateOptionallyInfoAsync();
         }
 
         private async void guna2TextBox1_TextChanged(object sender, EventArgs e)
         {
+            isUpdate = true;
             await FilterData(guna2TextBox1.Text);
+            isUpdate = false;
+            await UpdateOptionallyInfoAsync();
         }
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-            FormEditBooking edit = new(2, new(), new(), new(), this, "");
+            FormEditBooking edit = new(1, new(), new(), new(), this, "");
             edit.ShowDialog();
         }
 

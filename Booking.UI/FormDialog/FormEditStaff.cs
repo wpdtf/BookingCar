@@ -104,10 +104,10 @@ public partial class FormEditStaff : Form
             validationMessage = "Отчество не может содержать цифры.";
         }
 
-        var phoneRegex = new Regex(@"^\+7\d{10}$");
+        var phoneRegex = new Regex(@"^9\d{9}$");
         if (!phoneRegex.IsMatch(guna2TextBox4.Text))
         {
-            validationMessage = "Номер телефона должен начинаться с +7 и содержать только цифры.";
+            validationMessage = "Номер телефона должен начинаться с 9 и содержать только цифры.";
         }
 
         if (guna2DateTimePicker1.Value > DateTime.Now.AddYears(-18))

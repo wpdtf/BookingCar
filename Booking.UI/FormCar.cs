@@ -86,13 +86,15 @@ namespace Booking.UI
                 guna2DataGridView1.DataSource = _car;
             }
 
-            isUpdate = false;
-            await UpdateTarif();
         }
 
-        private void guna2TextBox1_TextChanged(object sender, EventArgs e)
+        private async void guna2TextBox1_TextChanged(object sender, EventArgs e)
         {
+            isUpdate = true;
             FilterData(guna2TextBox1.Text);
+
+            isUpdate = false;
+            await UpdateTarif();
         }
 
         private void guna2Button2_Click(object sender, EventArgs e)
