@@ -135,6 +135,7 @@ namespace Booking.UI
             if (guna2DataGridView2.SelectedRows.Count <= 0 || _tariff.Count == 0)
             {
                 MessageBox.Show("Выберите тариф для данного действия.", "Уведомление", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
             }
 
             var api = new ApiClient<TariffCar>(new Uri("http://localhost:5000/api/booking-car"));
