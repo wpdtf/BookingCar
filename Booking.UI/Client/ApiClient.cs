@@ -63,5 +63,19 @@ namespace Booking.UI.Client
                 MessageBox.Show(error.Detail, "Уведомление", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+        public async Task PutNotBodyAsync(string endpoint)
+        {
+
+            var response = await _httpClient.PutAsync($"{_baseUrl}/{endpoint}", null);
+            var jsonResponse = await response.Content.ReadAsStringAsync();
+
+            if (!response.IsSuccessStatusCode)
+            {
+                var error = JsonSerializer.Deserialize<Error>(jsonResponse);
+
+                MessageBox.Show(error.Detail, "Уведомление", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
     }
 }

@@ -113,6 +113,11 @@ public partial class FormEditCar : Form
             validationMessage = "Неккоректная дата производства";
         }
 
+        if (guna2ComboBox1.Text.Count() == 0)
+        {
+            validationMessage = "Необходимо выбрать значение в выпадающем списке";
+        }
+
         if (validationMessage.Count() > 0)
         {
             MessageBox.Show(validationMessage, "Уведомление", MessageBoxButtons.OK, MessageBoxIcon.Warning);

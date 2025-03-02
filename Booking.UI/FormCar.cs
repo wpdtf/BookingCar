@@ -3,6 +3,8 @@ namespace Booking.UI
     public partial class FormCar : Form
     {
         private List<Car> _car;
+        public List<Tariff> _tariff;
+        private bool isUpdate = true;
 
         public FormCar()
         {
@@ -11,10 +13,14 @@ namespace Booking.UI
 
         public async Task UpdateDateAsync()
         {
+            isUpdate = true;
             var api = new ApiClient<List<Car>>(new Uri("http://localhost:5000/api/booking-car"));
 
             _car = await api.GetAsync("booking/car");
             guna2DataGridView1.DataSource = _car;
+
+            isUpdate = false;
+            await UpdateTarif();
         }
 
         private async void FormAdmin_Load(object sender, EventArgs e)
@@ -51,15 +57,15 @@ namespace Booking.UI
 
         private bool IsSelecedRow()
         {
-            if (guna2DataGridView1.SelectedRows.Count < 0 || _car.Count == 0)
+            if (guna2DataGridView1.SelectedRows.Count <= 0 || _car.Count == 0)
             {
-                MessageBox.Show("Выберите сотрудника для данного действия.", "Уведомление", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Выберите автомобиль для данного действия.", "Уведомление", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return false;
             }
             return true;
         }
 
-        private void FilterData(string searchText)
+        private async void FilterData(string searchText)
         {
             if (!string.IsNullOrWhiteSpace(searchText))
             {
@@ -79,6 +85,9 @@ namespace Booking.UI
             {
                 guna2DataGridView1.DataSource = _car;
             }
+
+            isUpdate = false;
+            await UpdateTarif();
         }
 
         private void guna2TextBox1_TextChanged(object sender, EventArgs e)
@@ -90,6 +99,58 @@ namespace Booking.UI
         {
             FormEditCar formEdit = new(1, new(), this);
             formEdit.ShowDialog();
+        }
+
+        private async void guna2DataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            await UpdateTarif();
+        }
+
+        public async Task UpdateTarif()
+        {
+            if (isUpdate)
+            {
+                return;
+            }
+
+            if (!IsSelecedRow())
+            {
+                return;
+            }
+
+            var api = new ApiClient<List<Tariff>>(new Uri("http://localhost:5000/api/booking-car"));
+            _tariff = await api.GetAsync($"booking/tariffToCar?carId={(int)guna2DataGridView1.SelectedRows[0].Cells[0].Value}");
+            guna2DataGridView2.DataSource = _tariff;
+        }
+
+        private async void guna2Button3_Click(object sender, EventArgs e)
+        {
+            if (!IsSelecedRow())
+            {
+                return;
+            }
+
+            if (guna2DataGridView2.SelectedRows.Count <= 0 || _tariff.Count == 0)
+            {
+                MessageBox.Show("Выберите тариф для данного действия.", "Уведомление", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+            var api = new ApiClient<TariffCar>(new Uri("http://localhost:5000/api/booking-car"));
+
+
+            await api.PutNotBodyAsync($"booking/tariffToCar?tariff={(int)guna2DataGridView2.SelectedRows[0].Cells[0].Value}&carId={(int)guna2DataGridView1.SelectedRows[0].Cells[0].Value}");
+            await UpdateTarif();
+        }
+
+        private void guna2Button4_Click(object sender, EventArgs e)
+        {
+            if (!IsSelecedRow())
+            {
+                return;
+            }
+
+            FormListTariff listTariff = new((int)guna2DataGridView1.SelectedRows[0].Cells[0].Value, this);
+            listTariff.ShowDialog();
         }
     }
 }

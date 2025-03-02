@@ -63,9 +63,9 @@ partial class FormAddUser
         panel2.Controls.Add(label3);
         panel2.Dock = DockStyle.Top;
         panel2.Location = new Point(0, 0);
-        panel2.Margin = new Padding(4, 5, 4, 5);
+        panel2.Margin = new Padding(4, 4, 4, 4);
         panel2.Name = "panel2";
-        panel2.Size = new Size(500, 54);
+        panel2.Size = new Size(438, 40);
         panel2.TabIndex = 26;
         // 
         // guna2ControlBox2
@@ -76,10 +76,11 @@ partial class FormAddUser
         guna2ControlBox2.CustomizableEdges = customizableEdges1;
         guna2ControlBox2.FillColor = Color.FromArgb(64, 64, 64);
         guna2ControlBox2.IconColor = Color.White;
-        guna2ControlBox2.Location = new Point(451, 7);
+        guna2ControlBox2.Location = new Point(395, 5);
+        guna2ControlBox2.Margin = new Padding(3, 2, 3, 2);
         guna2ControlBox2.Name = "guna2ControlBox2";
         guna2ControlBox2.ShadowDecoration.CustomizableEdges = customizableEdges2;
-        guna2ControlBox2.Size = new Size(40, 40);
+        guna2ControlBox2.Size = new Size(35, 30);
         guna2ControlBox2.TabIndex = 20;
         // 
         // label3
@@ -87,10 +88,10 @@ partial class FormAddUser
         label3.AutoSize = true;
         label3.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 204);
         label3.ForeColor = Color.White;
-        label3.Location = new Point(11, 15);
+        label3.Location = new Point(10, 11);
         label3.Margin = new Padding(4, 0, 4, 0);
         label3.Name = "label3";
-        label3.Size = new Size(267, 25);
+        label3.Size = new Size(221, 20);
         label3.TabIndex = 17;
         label3.Text = "Управление учетной записью";
         // 
@@ -122,14 +123,14 @@ partial class FormAddUser
         guna2Button2.DisabledState.CustomBorderColor = Color.DarkGray;
         guna2Button2.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
         guna2Button2.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-        guna2Button2.FillColor = Color.FromArgb(49, 165, 169);
+        guna2Button2.FillColor = Color.FromArgb(255, 54, 50);
         guna2Button2.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
         guna2Button2.ForeColor = Color.White;
-        guna2Button2.Location = new Point(75, 460);
-        guna2Button2.Margin = new Padding(4, 5, 4, 5);
+        guna2Button2.Location = new Point(66, 345);
+        guna2Button2.Margin = new Padding(4, 4, 4, 4);
         guna2Button2.Name = "guna2Button2";
         guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges8;
-        guna2Button2.Size = new Size(349, 50);
+        guna2Button2.Size = new Size(305, 38);
         guna2Button2.TabIndex = 34;
         guna2Button2.Text = "Применить";
         // 
@@ -138,10 +139,10 @@ partial class FormAddUser
         label2.AutoSize = true;
         label2.Font = new Font("Segoe UI", 10F);
         label2.ForeColor = Color.FromArgb(64, 64, 64);
-        label2.Location = new Point(71, 252);
+        label2.Location = new Point(62, 189);
         label2.Margin = new Padding(4, 0, 4, 0);
         label2.Name = "label2";
-        label2.Size = new Size(105, 23);
+        label2.Size = new Size(88, 19);
         label2.TabIndex = 33;
         label2.Text = "Сотруднику:";
         // 
@@ -159,11 +160,11 @@ partial class FormAddUser
         guna2ComboBox1.ForeColor = Color.FromArgb(68, 88, 112);
         guna2ComboBox1.ItemHeight = 44;
         guna2ComboBox1.Items.AddRange(new object[] { "Фамилия", "Имя", "Отчество", "Номер телефона" });
-        guna2ComboBox1.Location = new Point(75, 283);
-        guna2ComboBox1.Margin = new Padding(4, 5, 4, 5);
+        guna2ComboBox1.Location = new Point(66, 212);
+        guna2ComboBox1.Margin = new Padding(4, 4, 4, 4);
         guna2ComboBox1.Name = "guna2ComboBox1";
         guna2ComboBox1.ShadowDecoration.CustomizableEdges = customizableEdges10;
-        guna2ComboBox1.Size = new Size(349, 50);
+        guna2ComboBox1.Size = new Size(306, 50);
         guna2ComboBox1.TabIndex = 32;
         // 
         // guna2TextBox1
@@ -179,14 +180,14 @@ partial class FormAddUser
         guna2TextBox1.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
         guna2TextBox1.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 204);
         guna2TextBox1.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-        guna2TextBox1.Location = new Point(75, 128);
-        guna2TextBox1.Margin = new Padding(4, 6, 4, 6);
+        guna2TextBox1.Location = new Point(66, 96);
+        guna2TextBox1.Margin = new Padding(4, 4, 4, 4);
         guna2TextBox1.MaxLength = 16;
         guna2TextBox1.Name = "guna2TextBox1";
         guna2TextBox1.PlaceholderText = "Логин";
         guna2TextBox1.SelectedText = "";
         guna2TextBox1.ShadowDecoration.CustomizableEdges = customizableEdges12;
-        guna2TextBox1.Size = new Size(349, 50);
+        guna2TextBox1.Size = new Size(305, 38);
         guna2TextBox1.TabIndex = 27;
         // 
         // guna2TextBox2
@@ -202,14 +203,14 @@ partial class FormAddUser
         guna2TextBox2.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
         guna2TextBox2.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 204);
         guna2TextBox2.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-        guna2TextBox2.Location = new Point(75, 190);
-        guna2TextBox2.Margin = new Padding(4, 6, 4, 6);
+        guna2TextBox2.Location = new Point(66, 142);
+        guna2TextBox2.Margin = new Padding(4, 4, 4, 4);
         guna2TextBox2.MaxLength = 16;
         guna2TextBox2.Name = "guna2TextBox2";
         guna2TextBox2.PlaceholderText = "Пароль";
         guna2TextBox2.SelectedText = "";
         guna2TextBox2.ShadowDecoration.CustomizableEdges = customizableEdges6;
-        guna2TextBox2.Size = new Size(349, 50);
+        guna2TextBox2.Size = new Size(305, 38);
         guna2TextBox2.TabIndex = 35;
         // 
         // label1
@@ -217,10 +218,10 @@ partial class FormAddUser
         label1.AutoSize = true;
         label1.Font = new Font("Segoe UI", 10F);
         label1.ForeColor = Color.FromArgb(64, 64, 64);
-        label1.Location = new Point(71, 343);
+        label1.Location = new Point(62, 257);
         label1.Margin = new Padding(4, 0, 4, 0);
         label1.Name = "label1";
-        label1.Size = new Size(52, 23);
+        label1.Size = new Size(42, 19);
         label1.TabIndex = 37;
         label1.Text = "Роль:";
         // 
@@ -237,19 +238,19 @@ partial class FormAddUser
         guna2ComboBox2.Font = new Font("Segoe UI", 9.75F);
         guna2ComboBox2.ForeColor = Color.FromArgb(68, 88, 112);
         guna2ComboBox2.ItemHeight = 44;
-        guna2ComboBox2.Location = new Point(75, 374);
-        guna2ComboBox2.Margin = new Padding(4, 5, 4, 5);
+        guna2ComboBox2.Location = new Point(66, 280);
+        guna2ComboBox2.Margin = new Padding(4, 4, 4, 4);
         guna2ComboBox2.Name = "guna2ComboBox2";
         guna2ComboBox2.ShadowDecoration.CustomizableEdges = customizableEdges4;
-        guna2ComboBox2.Size = new Size(349, 50);
+        guna2ComboBox2.Size = new Size(306, 50);
         guna2ComboBox2.TabIndex = 36;
         // 
         // FormAddUser
         // 
-        AutoScaleDimensions = new SizeF(8F, 20F);
+        AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
         BackColor = Color.White;
-        ClientSize = new Size(500, 582);
+        ClientSize = new Size(438, 436);
         Controls.Add(label1);
         Controls.Add(guna2ComboBox2);
         Controls.Add(guna2TextBox2);
@@ -259,7 +260,7 @@ partial class FormAddUser
         Controls.Add(guna2ComboBox1);
         Controls.Add(guna2TextBox1);
         FormBorderStyle = FormBorderStyle.None;
-        Margin = new Padding(4, 5, 4, 5);
+        Margin = new Padding(4, 4, 4, 4);
         Name = "FormAddUser";
         StartPosition = FormStartPosition.CenterScreen;
         Text = "FormAddUser";

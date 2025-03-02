@@ -31,22 +31,22 @@ namespace Booking.UI.FormDialog
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            var customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            var customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            var customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            var customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            var customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            var customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            var customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            var customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            var customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            var customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            var dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            var dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            var dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            var dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            var customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            var customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel2 = new Panel();
             guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
             label1 = new Label();
@@ -128,7 +128,7 @@ namespace Booking.UI.FormDialog
             guna2Button2.DisabledState.CustomBorderColor = Color.DarkGray;
             guna2Button2.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             guna2Button2.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button2.FillColor = Color.SteelBlue;
+            guna2Button2.FillColor = Color.FromArgb(255, 54, 50);
             guna2Button2.Font = new Font("Segoe UI", 10F);
             guna2Button2.ForeColor = Color.White;
             guna2Button2.Location = new Point(528, 65);
@@ -207,7 +207,7 @@ namespace Booking.UI.FormDialog
             guna2DateTimePicker1.BorderRadius = 10;
             guna2DateTimePicker1.Checked = true;
             guna2DateTimePicker1.CustomizableEdges = customizableEdges5;
-            guna2DateTimePicker1.FillColor = Color.SteelBlue;
+            guna2DateTimePicker1.FillColor = Color.FromArgb(255, 54, 50);
             guna2DateTimePicker1.Font = new Font("Segoe UI", 9F);
             guna2DateTimePicker1.ForeColor = Color.White;
             guna2DateTimePicker1.Format = DateTimePickerFormat.Long;

@@ -29,16 +29,16 @@ partial class FormAuth
     private void InitializeComponent()
     {
         components = new System.ComponentModel.Container();
-        var customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-        var customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-        var customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-        var customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-        var customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-        var customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-        var customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-        var customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-        var customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-        var customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
         panel2 = new Panel();
         guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
         label3 = new Label();
@@ -69,13 +69,13 @@ partial class FormAuth
         guna2ControlBox2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
         guna2ControlBox2.Animated = true;
         guna2ControlBox2.Cursor = Cursors.Hand;
-        guna2ControlBox2.CustomizableEdges = customizableEdges1;
+        guna2ControlBox2.CustomizableEdges = customizableEdges11;
         guna2ControlBox2.FillColor = Color.FromArgb(64, 64, 64);
         guna2ControlBox2.IconColor = Color.White;
         guna2ControlBox2.Location = new Point(395, 5);
         guna2ControlBox2.Margin = new Padding(3, 2, 3, 2);
         guna2ControlBox2.Name = "guna2ControlBox2";
-        guna2ControlBox2.ShadowDecoration.CustomizableEdges = customizableEdges2;
+        guna2ControlBox2.ShadowDecoration.CustomizableEdges = customizableEdges12;
         guna2ControlBox2.Size = new Size(35, 30);
         guna2ControlBox2.TabIndex = 20;
         // 
@@ -114,18 +114,18 @@ partial class FormAuth
         Guna2Button2.BorderColor = Color.FromArgb(16, 90, 101);
         Guna2Button2.BorderRadius = 12;
         Guna2Button2.Cursor = Cursors.Hand;
-        Guna2Button2.CustomizableEdges = customizableEdges7;
+        Guna2Button2.CustomizableEdges = customizableEdges17;
         Guna2Button2.DisabledState.BorderColor = Color.DarkGray;
         Guna2Button2.DisabledState.CustomBorderColor = Color.DarkGray;
         Guna2Button2.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
         Guna2Button2.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-        Guna2Button2.FillColor = Color.FromArgb(49, 165, 169);
+        Guna2Button2.FillColor = Color.FromArgb(255, 54, 50);
         Guna2Button2.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
         Guna2Button2.ForeColor = Color.White;
         Guna2Button2.Location = new Point(222, 345);
         Guna2Button2.Margin = new Padding(4);
         Guna2Button2.Name = "Guna2Button2";
-        Guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges8;
+        Guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges18;
         Guna2Button2.Size = new Size(149, 38);
         Guna2Button2.TabIndex = 34;
         Guna2Button2.Text = "Войти";
@@ -135,7 +135,7 @@ partial class FormAuth
         // 
         guna2TextBox1.BorderRadius = 12;
         guna2TextBox1.Cursor = Cursors.IBeam;
-        guna2TextBox1.CustomizableEdges = customizableEdges9;
+        guna2TextBox1.CustomizableEdges = customizableEdges19;
         guna2TextBox1.DefaultText = "";
         guna2TextBox1.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
         guna2TextBox1.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -150,7 +150,7 @@ partial class FormAuth
         guna2TextBox1.Name = "guna2TextBox1";
         guna2TextBox1.PlaceholderText = "Логин";
         guna2TextBox1.SelectedText = "";
-        guna2TextBox1.ShadowDecoration.CustomizableEdges = customizableEdges10;
+        guna2TextBox1.ShadowDecoration.CustomizableEdges = customizableEdges20;
         guna2TextBox1.Size = new Size(305, 38);
         guna2TextBox1.TabIndex = 27;
         // 
@@ -158,7 +158,7 @@ partial class FormAuth
         // 
         guna2TextBox2.BorderRadius = 12;
         guna2TextBox2.Cursor = Cursors.IBeam;
-        guna2TextBox2.CustomizableEdges = customizableEdges5;
+        guna2TextBox2.CustomizableEdges = customizableEdges15;
         guna2TextBox2.DefaultText = "";
         guna2TextBox2.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
         guna2TextBox2.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -174,7 +174,7 @@ partial class FormAuth
         guna2TextBox2.PasswordChar = '*';
         guna2TextBox2.PlaceholderText = "Пароль";
         guna2TextBox2.SelectedText = "";
-        guna2TextBox2.ShadowDecoration.CustomizableEdges = customizableEdges6;
+        guna2TextBox2.ShadowDecoration.CustomizableEdges = customizableEdges16;
         guna2TextBox2.Size = new Size(305, 38);
         guna2TextBox2.TabIndex = 35;
         // 
@@ -186,9 +186,9 @@ partial class FormAuth
         label2.Location = new Point(172, 147);
         label2.Margin = new Padding(4, 0, 4, 0);
         label2.Name = "label2";
-        label2.Size = new Size(88, 19);
+        label2.Size = new Size(91, 19);
         label2.TabIndex = 33;
-        label2.Text = "Сотруднику:";
+        label2.Text = "Авторизация";
         // 
         // Guna2Button1
         // 
@@ -197,18 +197,18 @@ partial class FormAuth
         Guna2Button1.BorderColor = Color.FromArgb(16, 90, 101);
         Guna2Button1.BorderRadius = 12;
         Guna2Button1.Cursor = Cursors.Hand;
-        Guna2Button1.CustomizableEdges = customizableEdges3;
+        Guna2Button1.CustomizableEdges = customizableEdges13;
         Guna2Button1.DisabledState.BorderColor = Color.DarkGray;
         Guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
         Guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
         Guna2Button1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-        Guna2Button1.FillColor = Color.FromArgb(49, 165, 169);
+        Guna2Button1.FillColor = Color.FromArgb(255, 54, 50);
         Guna2Button1.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
         Guna2Button1.ForeColor = Color.White;
         Guna2Button1.Location = new Point(66, 345);
         Guna2Button1.Margin = new Padding(4);
         Guna2Button1.Name = "Guna2Button1";
-        Guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges4;
+        Guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges14;
         Guna2Button1.Size = new Size(149, 38);
         Guna2Button1.TabIndex = 36;
         Guna2Button1.Text = "Выйти";

@@ -151,9 +151,4 @@ public partial class FormEditClient : Form
     {
         return input.Any(char.IsDigit);
     }
-
-    private void guna2TextBox4_TextChanged(object sender, EventArgs e)
-    {
-
-    }
 }

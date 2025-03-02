@@ -98,9 +98,9 @@ public class BookingController : ControllerBase
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesDefaultResponseType(typeof(ProblemDetails))]
-    public async Task<IActionResult> ViewTariffToCarAsync([FromQuery] int tariff, int carId)
+    public async Task<IActionResult> ViewTariffToCarAsync([FromQuery] int carId)
     {
-        return Ok(await _bookingRepository.ViewTariffToCarAsync(tariff, carId));
+        return Ok(await _bookingRepository.ViewTariffToCarAsync(carId));
     }
 
     /// <summary>

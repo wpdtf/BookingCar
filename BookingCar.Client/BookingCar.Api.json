@@ -360,15 +360,6 @@
         "operationId": "api/booking-car/booking/tariffToCarGET",
         "parameters": [
           {
-            "name": "tariff",
-            "in": "query",
-            "description": "Какого автомобиля",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          },
-          {
             "name": "carId",
             "in": "query",
             "description": "Какого тарифа",

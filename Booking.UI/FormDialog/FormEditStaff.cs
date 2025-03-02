@@ -115,6 +115,11 @@ public partial class FormEditStaff : Form
             validationMessage = "Сотруднику должно быть больше 18 лет.";
         }
 
+        if (guna2ComboBox1.Text.Count() == 0)
+        {
+            validationMessage = "Необходимо выбрать значение в выпадающем списке";
+        }
+
         if (validationMessage.Count() > 0)
         {
             MessageBox.Show(validationMessage, "Уведомление", MessageBoxButtons.OK, MessageBoxIcon.Warning);

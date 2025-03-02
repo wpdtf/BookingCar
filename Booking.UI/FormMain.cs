@@ -33,6 +33,8 @@ public partial class FormMain : Form
         {
             case "менеджер":
                 Guna2Button4.Dispose();
+                guna2Button7.Dispose();
+                guna2Button8.Dispose();
                 break;
             case "макретолог":
                 Guna2Button1.Dispose();
@@ -40,6 +42,7 @@ public partial class FormMain : Form
                 Guna2Button4.Dispose();
                 Guna2Button5.Dispose();
                 Guna2Button6.Dispose();
+                guna2Button7.Dispose();
                 break;
         }
     }
@@ -77,5 +80,10 @@ public partial class FormMain : Form
     private void guna2Button7_Click(object sender, EventArgs e)
     {
         OpenForm(new FormClient());
+    }
+
+    private void guna2Button8_Click(object sender, EventArgs e)
+    {
+        OpenForm(new FormTariff());
     }
 }

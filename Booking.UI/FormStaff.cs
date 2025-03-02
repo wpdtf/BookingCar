@@ -49,7 +49,7 @@ namespace Booking.UI
 
         private bool IsSelecedRow()
         {
-            if (guna2DataGridView1.SelectedRows.Count < 0 || _staff.Count == 0)
+            if (guna2DataGridView1.SelectedRows.Count <= 0 || _staff.Count == 0)
             {
                 MessageBox.Show("Выберите сотрудника для данного действия.", "Уведомление", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return false;
