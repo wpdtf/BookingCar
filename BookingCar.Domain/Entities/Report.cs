@@ -1,60 +1,52 @@
+using System.ComponentModel;
+using System.Text.Json.Serialization;
+
 namespace BookingCar.Domain.Entities
 {
     public class Report : Client
     {
-        /// <summary>
-        /// Ключ автомобиля
-        /// </summary>
+        [JsonPropertyName("carId")]
+        [DisplayName("Ключ автомобиля")]
         public int CarId { get; set; }
 
-        /// <summary>
-        /// брэнд
-        /// </summary>
+        [JsonPropertyName("brand")]
+        [DisplayName("Бренд")]
         public string Brand { get; set; }
 
-        /// <summary>
-        /// Марка
-        /// </summary>
+        [JsonPropertyName("mark")]
+        [DisplayName("Марка")]
         public string Mark { get; set; }
 
-        /// <summary>
-        /// Год производитства
-        /// </summary>
+        [JsonPropertyName("yearStart")]
+        [DisplayName("Год производитства")]
         public int YearStart { get; set; }
 
-        /// <summary>
-        /// Цвеь
-        /// </summary>
+        [JsonPropertyName("color")]
+        [DisplayName("Цвет")]
         public string Color { get; set; }
 
-        /// <summary>
-        /// Номер автомобиля
-        /// </summary>
+        [JsonPropertyName("carNumber")]
+        [DisplayName("Номер автомобиля")]
         public string CarNumber { get; set; }
 
-        /// <summary>
-        /// Вин номер автомобиля
-        /// </summary>
+        [JsonPropertyName("vin")]
+        [DisplayName("Вин номер автомобиля")]
         public string VIN { get; set; }
 
-        /// <summary>
-        /// Активен ли автомобиль
-        /// </summary>
+        [JsonPropertyName("active")]
+        [DisplayName("Активен ли автомобиль")]
         public bool Active { get; set; }
 
-        /// <summary>
-        /// Минимальный стаж автомобиля
-        /// </summary>
+        [JsonPropertyName("minimalExperience")]
+        [DisplayName("Минимальный стаж автомобиля")]
         public int MinimalExperience { get; set; }
 
-        /// <summary>
-        /// Класс автомобиля
-        /// </summary>
+        [JsonPropertyName("class")]
+        [DisplayName("Ключ класса автомобиля")]
         public int Class { get; set; }
 
-        /// <summary>
-        /// Класс автомобиля (текстом)
-        /// </summary>
+        [JsonPropertyName("classTxt")]
+        [DisplayName("Класс автомобиля")]
         public string ClassTxt { get; set; }
     }
 }

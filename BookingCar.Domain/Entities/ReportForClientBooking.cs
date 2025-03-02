@@ -1,37 +1,35 @@
+using BookingCar.Domain.Declare;
 using System;
+using System.ComponentModel;
+using System.Text.Json.Serialization;
 
 namespace BookingCar.Domain.Entities
 {
     public class ReportForClientBooking : Report
     {
-        /// <summary>
-        /// Ключ брования
-        /// </summary>
+        [JsonPropertyName("bookingId")]
+        [DisplayName("Ключ брования")]
         public int BookingId { get; set; }
 
-        /// <summary>
-        /// Статус бронирования
-        /// </summary>
-        public int Status { get; set; }
+        [JsonPropertyName("status")]
+        [DisplayName("Статус бронирования")]
+        [JsonConverter(typeof(JsonNumberEnumConverter<statusBooking>))]
+        public statusBooking Status { get; set; }
 
-        /// <summary>
-        /// Время создания бронирования
-        /// </summary>
+        [JsonPropertyName("bookingTime")]
+        [DisplayName("Время создания бронирования")]
         public int BookingTime { get; set; }
 
-        /// <summary>
-        /// Время начала поездки
-        /// </summary>
+        [JsonPropertyName("bookingStart")]
+        [DisplayName("Время начала поездки")]
         public DateTime BookingStart { get; set; }
 
-        /// <summary>
-        /// Наименование тарифа
-        /// </summary>
+        [JsonPropertyName("nameTariff")]
+        [DisplayName("Наименование тарифа")]
         public string NameTariff { get; set; }
 
-        /// <summary>
-        /// Количество инцидентов по бранированию
-        /// </summary>
+        [JsonPropertyName("countIncident")]
+        [DisplayName("Количество инцидентов")]
         public int? CountIncident { get; set; }
     }
 }
