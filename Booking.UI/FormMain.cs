@@ -64,7 +64,7 @@ public partial class FormMain : Form
 
     private void Guna2Button5_Click(object sender, EventArgs e)
     {
-        //openForm(new FormAdmin());
+        OpenForm(new FormBooking());
     }
 
     private void Guna2Button3_Click(object sender, EventArgs e)

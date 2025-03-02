@@ -95,5 +95,22 @@ namespace Booking.UI
             FormEditClient formEdit = new(1, new(), this);
             formEdit.ShowDialog();
         }
+
+        private void guna2Button3_Click(object sender, EventArgs e)
+        {
+            if (!IsSelecedRow())
+            {
+                return;
+            }
+
+            var selectedRow = guna2DataGridView1.SelectedRows[0];
+
+            SelectedClient.ClientId = (int)selectedRow.Cells[0].Value;
+            SelectedClient.First_name = selectedRow.Cells[2].Value.ToString();
+            SelectedClient.Last_name = selectedRow.Cells[1].Value.ToString();
+            SelectedClient.Phone = selectedRow.Cells[5].Value.ToString();
+            
+            MessageBox.Show($"Клиент {SelectedClient.ClientId} - {SelectedClient.Last_name} {SelectedClient.First_name} выбран", "Уведомление", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }

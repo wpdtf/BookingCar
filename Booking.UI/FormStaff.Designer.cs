@@ -68,10 +68,10 @@ namespace Booking.UI
             guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             guna2DataGridView1.BackgroundColor = Color.WhiteSmoke;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(255, 54, 50);
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(32, 32, 32);
             dataGridViewCellStyle2.Font = new Font("Segoe UI", 11.25F);
             dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(255, 54, 50);
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(32, 32, 32);
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
@@ -153,7 +153,7 @@ namespace Booking.UI
             guna2Button3.DisabledState.CustomBorderColor = Color.DarkGray;
             guna2Button3.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             guna2Button3.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button3.FillColor = Color.FromArgb(255, 54, 50);
+            guna2Button3.FillColor = Color.FromArgb(32, 32, 32);
             guna2Button3.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
             guna2Button3.ForeColor = Color.White;
             guna2Button3.Location = new Point(448, 11);
@@ -176,7 +176,7 @@ namespace Booking.UI
             Guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
             Guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             Guna2Button1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            Guna2Button1.FillColor = Color.FromArgb(255, 54, 50);
+            Guna2Button1.FillColor = Color.FromArgb(32, 32, 32);
             Guna2Button1.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
             Guna2Button1.ForeColor = Color.White;
             Guna2Button1.Location = new Point(606, 10);
@@ -249,7 +249,7 @@ namespace Booking.UI
             guna2Button2.DisabledState.CustomBorderColor = Color.DarkGray;
             guna2Button2.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             guna2Button2.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button2.FillColor = Color.FromArgb(255, 54, 50);
+            guna2Button2.FillColor = Color.FromArgb(32, 32, 32);
             guna2Button2.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
             guna2Button2.ForeColor = Color.White;
             guna2Button2.Location = new Point(763, 10);

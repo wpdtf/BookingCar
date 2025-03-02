@@ -161,7 +161,7 @@ namespace Booking.UI.FormDialog
             guna2Button2.DisabledState.CustomBorderColor = Color.DarkGray;
             guna2Button2.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             guna2Button2.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button2.FillColor = Color.FromArgb(255, 54, 50);
+            guna2Button2.FillColor = Color.FromArgb(32, 32, 32);
             guna2Button2.Font = new Font("Segoe UI", 10F);
             guna2Button2.ForeColor = Color.White;
             guna2Button2.Location = new Point(242, 289);
@@ -271,7 +271,7 @@ namespace Booking.UI.FormDialog
             guna2DateTimePicker1.BorderRadius = 10;
             guna2DateTimePicker1.Checked = true;
             guna2DateTimePicker1.CustomizableEdges = customizableEdges5;
-            guna2DateTimePicker1.FillColor = Color.FromArgb(255, 54, 50);
+            guna2DateTimePicker1.FillColor = Color.FromArgb(32, 32, 32);
             guna2DateTimePicker1.Font = new Font("Segoe UI", 9F);
             guna2DateTimePicker1.ForeColor = Color.White;
             guna2DateTimePicker1.Format = DateTimePickerFormat.Long;

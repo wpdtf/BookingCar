@@ -152,5 +152,42 @@ namespace Booking.UI
             FormListTariff listTariff = new((int)guna2DataGridView1.SelectedRows[0].Cells[0].Value, this);
             listTariff.ShowDialog();
         }
+
+        private void guna2Button5_Click(object sender, EventArgs e)
+        {
+            if (!IsSelecedRow())
+            {
+                return;
+            }
+
+            var selectedRow = guna2DataGridView1.SelectedRows[0];
+
+            SelectedCar.CarId = (int)selectedRow.Cells[0].Value;
+            SelectedCar.Brand = selectedRow.Cells[1].Value.ToString();
+            SelectedCar.Color = selectedRow.Cells[4].Value.ToString();
+            SelectedCar.MinimalExperience = (int)selectedRow.Cells[8].Value;
+
+            MessageBox.Show($"Автомобиль {SelectedCar.CarId} - {SelectedCar.Brand} {SelectedCar.Color} выбран", "Уведомление", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void guna2Button6_Click(object sender, EventArgs e)
+        {
+            if (!IsSelecedRow())
+            {
+                return;
+            }
+
+            if (guna2DataGridView2.SelectedRows.Count <= 0 || _tariff.Count == 0)
+            {
+                MessageBox.Show("Выберите тариф для данного действия.", "Уведомление", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+            var selectedRow = guna2DataGridView2.SelectedRows[0];
+
+            SelectedTariff.TarrifId = (int)selectedRow.Cells[0].Value;
+            SelectedTariff.Name = selectedRow.Cells[1].Value.ToString();
+
+            MessageBox.Show($"Тариф {SelectedTariff.TarrifId} - {SelectedTariff.Name} выбран", "Уведомление", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }

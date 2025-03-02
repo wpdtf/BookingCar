@@ -369,7 +369,7 @@ namespace Booking.UI
             panel2.Location = new Point(0, 0);
             panel2.Margin = new Padding(4);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1652, 40);
+            panel2.Size = new Size(1969, 40);
             panel2.TabIndex = 15;
             // 
             // guna2ControlBox3
@@ -381,7 +381,7 @@ namespace Booking.UI
             guna2ControlBox3.CustomizableEdges = customizableEdges17;
             guna2ControlBox3.FillColor = Color.FromArgb(64, 64, 64);
             guna2ControlBox3.IconColor = Color.White;
-            guna2ControlBox3.Location = new Point(1562, 5);
+            guna2ControlBox3.Location = new Point(1879, 5);
             guna2ControlBox3.Margin = new Padding(3, 2, 3, 2);
             guna2ControlBox3.Name = "guna2ControlBox3";
             guna2ControlBox3.ShadowDecoration.CustomizableEdges = customizableEdges18;
@@ -396,7 +396,7 @@ namespace Booking.UI
             guna2ControlBox2.CustomizableEdges = customizableEdges19;
             guna2ControlBox2.FillColor = Color.FromArgb(64, 64, 64);
             guna2ControlBox2.IconColor = Color.White;
-            guna2ControlBox2.Location = new Point(1603, 5);
+            guna2ControlBox2.Location = new Point(1920, 5);
             guna2ControlBox2.Margin = new Padding(3, 2, 3, 2);
             guna2ControlBox2.Name = "guna2ControlBox2";
             guna2ControlBox2.ShadowDecoration.CustomizableEdges = customizableEdges20;
@@ -412,7 +412,7 @@ namespace Booking.UI
             guna2ControlBox1.CustomizableEdges = customizableEdges21;
             guna2ControlBox1.FillColor = Color.FromArgb(64, 64, 64);
             guna2ControlBox1.IconColor = Color.White;
-            guna2ControlBox1.Location = new Point(1522, 5);
+            guna2ControlBox1.Location = new Point(1839, 5);
             guna2ControlBox1.Margin = new Padding(3, 2, 3, 2);
             guna2ControlBox1.Name = "guna2ControlBox1";
             guna2ControlBox1.ShadowDecoration.CustomizableEdges = customizableEdges22;
@@ -437,7 +437,7 @@ namespace Booking.UI
             guna2ShadowPanel1.Padding = new Padding(3, 2, 3, 2);
             guna2ShadowPanel1.Radius = 10;
             guna2ShadowPanel1.ShadowColor = Color.White;
-            guna2ShadowPanel1.Size = new Size(1362, 669);
+            guna2ShadowPanel1.Size = new Size(1679, 669);
             guna2ShadowPanel1.TabIndex = 16;
             // 
             // FormMain
@@ -445,7 +445,7 @@ namespace Booking.UI
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(32, 32, 32);
-            ClientSize = new Size(1652, 709);
+            ClientSize = new Size(1969, 709);
             Controls.Add(guna2ShadowPanel1);
             Controls.Add(panel1);
             Controls.Add(panel2);

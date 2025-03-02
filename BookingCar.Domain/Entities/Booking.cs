@@ -1,3 +1,4 @@
+using BookingCar.Domain.Declare;
 using System;
 using System.ComponentModel;
 using System.Text.Json.Serialization;
@@ -20,7 +21,7 @@ namespace BookingCar.Domain.Entities
 
         [JsonPropertyName("status")]
         [DisplayName("Статус бронирования")]
-        public int Status { get; set; }
+        public statusBooking Status { get; set; }
 
         [JsonPropertyName("bookingTime")]
         [DisplayName("Время создания бронирования")]
