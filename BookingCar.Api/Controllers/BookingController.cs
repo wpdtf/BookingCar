@@ -33,14 +33,15 @@ public class BookingController : ControllerBase
     /// Получение данных по автомобилю
     /// </summary>
     /// <param name="carId">По какому автомобилю</param>
+    /// <param name="onlyActive">Только активные автомобили</param>
     /// <returns>При успешном выполнении вернутся данные, или ошибка.</returns>
     [HttpGet("car")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesDefaultResponseType(typeof(ProblemDetails))]
-    public async Task<IActionResult> ViewCarAsync([FromQuery] int carId)
+    public async Task<IActionResult> ViewCarAsync([FromQuery] int carId, bool onlyActive)
     {
-        return Ok(await _bookingRepository.ViewCarAsync(carId));
+        return Ok(await _bookingRepository.ViewCarAsync(carId, onlyActive));
     }
 
     /// <summary>
@@ -122,14 +123,15 @@ public class BookingController : ControllerBase
     /// Получение данных по бронированиям
     /// </summary>
     /// <param name="bookingId">По какому бронированию</param>
+    /// <param name="clientId">По какому клиенту</param>
     /// <returns>При успешном выполнении вернутся данные, или ошибка.</returns>
     [HttpGet("booking")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesDefaultResponseType(typeof(ProblemDetails))]
-    public async Task<IActionResult> ViewBookingAsync([FromQuery] int bookingId)
+    public async Task<IActionResult> ViewBookingAsync([FromQuery] int bookingId, int clientId)
     {
-        return Ok(await _bookingRepository.ViewBookingAsync(bookingId));
+        return Ok(await _bookingRepository.ViewBookingAsync(bookingId, clientId));
     }
 
     /// <summary>

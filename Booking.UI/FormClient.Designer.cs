@@ -32,20 +32,23 @@ namespace Booking.UI
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
             panel1 = new Panel();
             guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             Guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)guna2DataGridView1).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -124,6 +127,7 @@ namespace Booking.UI
             // 
             // panel1
             // 
+            panel1.Controls.Add(guna2Button4);
             panel1.Controls.Add(guna2Button3);
             panel1.Controls.Add(Guna2Button1);
             panel1.Controls.Add(guna2TextBox1);
@@ -141,7 +145,7 @@ namespace Booking.UI
             guna2Button3.BorderColor = Color.FromArgb(16, 90, 101);
             guna2Button3.BorderRadius = 12;
             guna2Button3.Cursor = Cursors.Hand;
-            guna2Button3.CustomizableEdges = customizableEdges1;
+            guna2Button3.CustomizableEdges = customizableEdges3;
             guna2Button3.DisabledState.BorderColor = Color.DarkGray;
             guna2Button3.DisabledState.CustomBorderColor = Color.DarkGray;
             guna2Button3.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -149,10 +153,10 @@ namespace Booking.UI
             guna2Button3.FillColor = Color.FromArgb(32, 32, 32);
             guna2Button3.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
             guna2Button3.ForeColor = Color.White;
-            guna2Button3.Location = new Point(448, 10);
+            guna2Button3.Location = new Point(381, 11);
             guna2Button3.Margin = new Padding(4);
             guna2Button3.Name = "guna2Button3";
-            guna2Button3.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            guna2Button3.ShadowDecoration.CustomizableEdges = customizableEdges4;
             guna2Button3.Size = new Size(150, 39);
             guna2Button3.TabIndex = 18;
             guna2Button3.Text = "Выбрать для аренды";
@@ -164,7 +168,7 @@ namespace Booking.UI
             Guna2Button1.BorderColor = Color.FromArgb(16, 90, 101);
             Guna2Button1.BorderRadius = 12;
             Guna2Button1.Cursor = Cursors.Hand;
-            Guna2Button1.CustomizableEdges = customizableEdges3;
+            Guna2Button1.CustomizableEdges = customizableEdges5;
             Guna2Button1.DisabledState.BorderColor = Color.DarkGray;
             Guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
             Guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -172,10 +176,10 @@ namespace Booking.UI
             Guna2Button1.FillColor = Color.FromArgb(32, 32, 32);
             Guna2Button1.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
             Guna2Button1.ForeColor = Color.White;
-            Guna2Button1.Location = new Point(606, 10);
+            Guna2Button1.Location = new Point(697, 11);
             Guna2Button1.Margin = new Padding(4);
             Guna2Button1.Name = "Guna2Button1";
-            Guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            Guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges6;
             Guna2Button1.Size = new Size(150, 39);
             Guna2Button1.TabIndex = 17;
             Guna2Button1.Text = "Изменить";
@@ -185,7 +189,7 @@ namespace Booking.UI
             // 
             guna2TextBox1.BorderRadius = 12;
             guna2TextBox1.Cursor = Cursors.IBeam;
-            guna2TextBox1.CustomizableEdges = customizableEdges5;
+            guna2TextBox1.CustomizableEdges = customizableEdges7;
             guna2TextBox1.DefaultText = "";
             guna2TextBox1.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             guna2TextBox1.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -200,7 +204,7 @@ namespace Booking.UI
             guna2TextBox1.Name = "guna2TextBox1";
             guna2TextBox1.PlaceholderText = "Поиск...";
             guna2TextBox1.SelectedText = "";
-            guna2TextBox1.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            guna2TextBox1.ShadowDecoration.CustomizableEdges = customizableEdges8;
             guna2TextBox1.Size = new Size(315, 38);
             guna2TextBox1.TabIndex = 14;
             guna2TextBox1.TextChanged += guna2TextBox1_TextChanged;
@@ -211,7 +215,7 @@ namespace Booking.UI
             guna2Button2.BorderColor = Color.FromArgb(16, 90, 101);
             guna2Button2.BorderRadius = 12;
             guna2Button2.Cursor = Cursors.Hand;
-            guna2Button2.CustomizableEdges = customizableEdges7;
+            guna2Button2.CustomizableEdges = customizableEdges9;
             guna2Button2.DisabledState.BorderColor = Color.DarkGray;
             guna2Button2.DisabledState.CustomBorderColor = Color.DarkGray;
             guna2Button2.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -219,14 +223,37 @@ namespace Booking.UI
             guna2Button2.FillColor = Color.FromArgb(32, 32, 32);
             guna2Button2.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
             guna2Button2.ForeColor = Color.White;
-            guna2Button2.Location = new Point(763, 10);
+            guna2Button2.Location = new Point(855, 11);
             guna2Button2.Margin = new Padding(4);
             guna2Button2.Name = "guna2Button2";
-            guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges10;
             guna2Button2.Size = new Size(150, 39);
             guna2Button2.TabIndex = 4;
             guna2Button2.Text = "Добавить";
             guna2Button2.Click += guna2Button2_Click;
+            // 
+            // guna2Button4
+            // 
+            guna2Button4.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            guna2Button4.BorderColor = Color.FromArgb(16, 90, 101);
+            guna2Button4.BorderRadius = 12;
+            guna2Button4.Cursor = Cursors.Hand;
+            guna2Button4.CustomizableEdges = customizableEdges1;
+            guna2Button4.DisabledState.BorderColor = Color.DarkGray;
+            guna2Button4.DisabledState.CustomBorderColor = Color.DarkGray;
+            guna2Button4.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            guna2Button4.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            guna2Button4.FillColor = Color.FromArgb(32, 32, 32);
+            guna2Button4.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            guna2Button4.ForeColor = Color.White;
+            guna2Button4.Location = new Point(539, 11);
+            guna2Button4.Margin = new Padding(4);
+            guna2Button4.Name = "guna2Button4";
+            guna2Button4.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            guna2Button4.Size = new Size(150, 39);
+            guna2Button4.TabIndex = 19;
+            guna2Button4.Text = "Логины";
+            guna2Button4.Click += guna2Button4_Click;
             // 
             // FormClient
             // 
@@ -254,5 +281,6 @@ namespace Booking.UI
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private Guna.UI2.WinForms.Guna2Button Guna2Button1;
         private Guna.UI2.WinForms.Guna2Button guna2Button3;
+        private Guna.UI2.WinForms.Guna2Button guna2Button4;
     }
 }

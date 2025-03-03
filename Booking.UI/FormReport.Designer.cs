@@ -151,7 +151,7 @@ namespace Booking.UI
             guna2Button3.FillColor = Color.FromArgb(32, 32, 32);
             guna2Button3.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
             guna2Button3.ForeColor = Color.White;
-            guna2Button3.Location = new Point(703, 57);
+            guna2Button3.Location = new Point(855, 13);
             guna2Button3.Margin = new Padding(4);
             guna2Button3.Name = "guna2Button3";
             guna2Button3.ShadowDecoration.CustomizableEdges = customizableEdges2;
@@ -174,7 +174,7 @@ namespace Booking.UI
             guna2Button1.FillColor = Color.FromArgb(32, 32, 32);
             guna2Button1.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
             guna2Button1.ForeColor = Color.White;
-            guna2Button1.Location = new Point(861, 57);
+            guna2Button1.Location = new Point(855, 59);
             guna2Button1.Margin = new Padding(4);
             guna2Button1.Name = "guna2Button1";
             guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges4;
@@ -188,7 +188,7 @@ namespace Booking.UI
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI Semibold", 20F, FontStyle.Bold, GraphicsUnit.Point, 204);
             label7.ForeColor = Color.DimGray;
-            label7.Location = new Point(12, 9);
+            label7.Location = new Point(12, 16);
             label7.Name = "label7";
             label7.Size = new Size(98, 37);
             label7.TabIndex = 37;
@@ -206,10 +206,10 @@ namespace Booking.UI
             guna2ComboBox1.ForeColor = Color.FromArgb(68, 88, 112);
             guna2ComboBox1.ItemHeight = 30;
             guna2ComboBox1.Items.AddRange(new object[] { "Данные по всем поездкам клиентов", "Данные по всем инцидентам в рамках поездок клиентов" });
-            guna2ComboBox1.Location = new Point(116, 12);
+            guna2ComboBox1.Location = new Point(116, 16);
             guna2ComboBox1.Name = "guna2ComboBox1";
             guna2ComboBox1.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            guna2ComboBox1.Size = new Size(590, 36);
+            guna2ComboBox1.Size = new Size(571, 36);
             guna2ComboBox1.TabIndex = 36;
             // 
             // guna2Button2
@@ -226,7 +226,7 @@ namespace Booking.UI
             guna2Button2.FillColor = Color.FromArgb(32, 32, 32);
             guna2Button2.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
             guna2Button2.ForeColor = Color.White;
-            guna2Button2.Location = new Point(763, 10);
+            guna2Button2.Location = new Point(697, 13);
             guna2Button2.Margin = new Padding(4);
             guna2Button2.Name = "guna2Button2";
             guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges8;

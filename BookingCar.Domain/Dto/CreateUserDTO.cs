@@ -3,22 +3,27 @@ namespace BookingCar.Domain.Dto
     public class CreateUserDTO
     {
         /// <summary>
-        /// Логин сотрудника
+        /// Логин
         /// </summary>
         public string Login { get; set; }
 
         /// <summary>
-        /// Пароль сотрудника
+        /// Пароль
         /// </summary>
         public string Password { get; set; }
 
         /// <summary>
-        /// Пароль сотрудника
+        /// Ключ записи
         /// </summary>
         public int UserId { get; set; }
 
         /// <summary>
-        /// Пароль сотрудника
+        /// Телефон клиента (если еще нет его ключа
+        /// </summary>
+        public string Phone { get; set; }
+
+        /// <summary>
+        /// Дата актуальности данных
         /// </summary>
         public DateTime DateLactActual { get; set; }
     }

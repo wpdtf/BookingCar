@@ -19,6 +19,15 @@ namespace Booking.UI
         public FormBooking()
         {
             InitializeComponent();
+
+            switch (CurrentUser.Role.ToLower())
+            {
+                case "клиент":
+                    Guna2Button1.Visible = false;
+                    guna2Button3.Visible = false;
+                    guna2DataGridView2.Dispose();
+                    break;
+            }
         }
 
         public async Task UpdateDateAsync()
@@ -26,7 +35,7 @@ namespace Booking.UI
             isUpdate = true;
             var api = new ApiClient<List<LocalBooking>>(new Uri("http://localhost:5000/api/booking-car"));
 
-            _booking = await api.GetAsync("booking/booking");
+            _booking = await api.GetAsync($"booking/booking?clientId={CurrentUser.ClientId}");
             guna2DataGridView1.DataSource = _booking;
             isUpdate = false;
             await UpdateOptionallyInfoAsync();
@@ -38,15 +47,22 @@ namespace Booking.UI
             {
                 return;
             }
+            else
+            {
+                guna2DataGridView3.DataSource = new List<Car>();
+            }
 
             if (!IsSelecedRow())
             {
                 return;
             }
 
-            var apiClient = new ApiClient<List<LocalClient>>(new Uri("http://localhost:5000/api/booking-car"));
-            _client = await apiClient.GetAsync($"client/list?clientId={guna2DataGridView1.SelectedRows[0].Cells[2].Value}");
-            guna2DataGridView2.DataSource = _client;
+            if (!(CurrentUser.Role.ToLower() == "клиент"))
+            {
+                var apiClient = new ApiClient<List<LocalClient>>(new Uri("http://localhost:5000/api/booking-car"));
+                _client = await apiClient.GetAsync($"client/list?clientId={guna2DataGridView1.SelectedRows[0].Cells[2].Value}");
+                guna2DataGridView2.DataSource = _client;
+            }
 
             var apiCar = new ApiClient<List<Car>>(new Uri("http://localhost:5000/api/booking-car"));
             _car = await apiCar.GetAsync($"booking/car?carId={guna2DataGridView1.SelectedRows[0].Cells[1].Value}");
@@ -106,11 +122,17 @@ namespace Booking.UI
 
         private bool IsSelecedRow()
         {
-            if (guna2DataGridView1.SelectedRows.Count <= 0 || _booking.Count == 0)
+            if (_booking.Count == 0)
+            {
+                return false;
+            }
+
+            if (guna2DataGridView1.SelectedRows.Count <= 0)
             {
                 MessageBox.Show("Выберите аренду для данного действия.", "Уведомление", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return false;
             }
+
             return true;
         }
 

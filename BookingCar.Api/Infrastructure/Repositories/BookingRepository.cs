@@ -4,9 +4,9 @@ public class BookingRepository(DataBaseContext dbContext) : IBookingRepository
 {
     private readonly DatabaseFacade _dbContext = dbContext.Database;
 
-    public async Task<IEnumerable<Car>> ViewCarAsync(int carId)
+    public async Task<IEnumerable<Car>> ViewCarAsync(int carId, bool onlyActive)
     {
-        FormattableString sql = @$"dbo.ПросмотрАвтомобилей @carId = {carId}";
+        FormattableString sql = @$"dbo.ПросмотрАвтомобилей @carId = {carId}, @onlyActive = {onlyActive}";
 
         return await Task.Run(() => _dbContext.SqlQuery<Car>(sql));
     }
@@ -50,10 +50,10 @@ public class BookingRepository(DataBaseContext dbContext) : IBookingRepository
         return await Task.Run(() => _dbContext.SqlQuery<Tariff>(sql));
     }
 
-    public async Task<IEnumerable<Booking>> ViewBookingAsync(int bookingId)
+    public async Task<IEnumerable<Booking>> ViewBookingAsync(int bookingId, int clientId)
     {
         FormattableString sql = @$"dbo.ПросмотрБронирования 
-            @bookingId = {bookingId}";
+            @bookingId = {bookingId}, @clientId = {clientId}";
 
         return await Task.Run(() => _dbContext.SqlQuery<Booking>(sql));
     }

@@ -25,11 +25,51 @@ public partial class FormEditBooking : Form
         Option = option;
         BookingForm = formBooking;
         TariffName = tarriffName;
+
+        switch (CurrentUser.Role.ToLower())
+        {
+            case "клиент":
+                guna2Button5.Visible = false;
+                guna2Button7.Visible = false;
+                guna2Button3.Visible = false;
+
+                BookingModel.ClientId = SelectedClient.ClientId;
+                ClientModel.First_name = SelectedClient.First_name;
+                ClientModel.Last_name = SelectedClient.Last_name;
+                ClientModel.Phone = SelectedClient.Phone;
+                guna2TextBox3.Text = ClientModel.Last_name;
+                guna2TextBox5.Text = ClientModel.First_name;
+                guna2TextBox6.Text = ClientModel.Phone;
+
+                if (SelectedCar.CarId > 0)
+                {
+                    guna2Button1.Enabled = false;
+                    guna2Button1.Text = "Изменено";
+
+                    BookingModel.CarId = SelectedCar.CarId;
+                    CarModel.Brand = SelectedCar.Brand;
+                    CarModel.Color = SelectedCar.Color;
+                    CarModel.MinimalExperience = SelectedCar.MinimalExperience;
+                    guna2TextBox1.Text = CarModel.Brand;
+                    guna2TextBox2.Text = CarModel.Color;
+                }
+
+                if (SelectedTariff.TarrifId > 0)
+                {
+                    guna2Button4.Enabled = false;
+                    guna2Button4.Text = "Изменено";
+
+                    BookingModel.TariffId = SelectedTariff.TarrifId;
+                    TariffName = SelectedTariff.Name;
+                    guna2TextBox7.Text = TariffName;
+                }
+                break;
+        }
     }
 
     private void FormEditStaff_Load(object sender, EventArgs e)
     {
-        if (SelectedCar.CarId > 0)
+        if (SelectedCar.CarId > 0 == guna2Button1.Enabled)
         {
 
             if (SelectedCar.CarId == CarModel.CarId)
@@ -65,7 +105,7 @@ public partial class FormEditBooking : Form
             guna2Button3.Enabled = false;
         }
 
-        if (SelectedTariff.TarrifId > 0)
+        if (SelectedTariff.TarrifId > 0 == guna2Button4.Enabled)
         {
 
             if (SelectedTariff.TarrifId == BookingModel.TariffId)
@@ -85,6 +125,11 @@ public partial class FormEditBooking : Form
 
         if (Option == 1)
         {
+            BookingModel.Status = statusBooking.Create;
+            guna2TextBox8.Text = BookingModel.Status.ToString();
+            var today = DateTime.UtcNow.AddHours(4);
+            BookingModel.BookingStart = today.AddTicks(-(today.Ticks % TimeSpan.TicksPerSecond));
+            guna2DateTimePicker1.Value = BookingModel.BookingStart;
             guna2Button2.Text = "Добавить";
             label1.Text = "Добавление";
             guna2Button3.Enabled = false;
@@ -172,6 +217,16 @@ public partial class FormEditBooking : Form
             validationMessage = "Необходимо указать тариф.";
         }
 
+        if (BookingModel.CarId == 0)
+        {
+            validationMessage = "Необходимо выбрать автомибиль.";
+        }
+
+        if (Option == 0 && guna2DateTimePicker1.Value < DateTime.Now)
+        {
+            validationMessage = "Дата начала поездки должна быть больше текущей даты.";
+        }
+
         if (validationMessage.Count() > 0)
         {
             MessageBox.Show(validationMessage, "Уведомление", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -236,11 +291,13 @@ public partial class FormEditBooking : Form
         if (BookingModel.Status == statusBooking.Payment)
         {
             guna2Button6.Enabled = false;
+            guna2Button7.Enabled = true;
             BookingModel.Status = statusBooking.Create;
             guna2TextBox8.Text = BookingModel.Status.ToString();
         }
         else if (BookingModel.Status == statusBooking.End)
         {
+            guna2Button7.Enabled = true;
             BookingModel.Status = statusBooking.Payment;
             guna2TextBox8.Text = BookingModel.Status.ToString();
         }
@@ -250,17 +307,20 @@ public partial class FormEditBooking : Form
     {
         if (BookingModel.Status == statusBooking.Create)
         {
+            guna2Button6.Enabled = true;
             BookingModel.Status = statusBooking.Payment;
             guna2TextBox8.Text = BookingModel.Status.ToString();
         }
         else if (BookingModel.Status == statusBooking.Payment)
         {
             guna2Button7.Enabled = false;
+            guna2Button6.Enabled = true;
             BookingModel.Status = statusBooking.End;
             guna2TextBox8.Text = BookingModel.Status.ToString();
         }
         else if (BookingModel.Status == statusBooking.Сancellation)
         {
+            guna2Button7.Text = "Вперед";
             guna2Button6.Enabled = false;
             BookingModel.Status = statusBooking.Create;
             guna2TextBox8.Text = BookingModel.Status.ToString();

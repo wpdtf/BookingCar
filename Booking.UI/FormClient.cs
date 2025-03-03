@@ -48,7 +48,7 @@ namespace Booking.UI
                 Experience = (int)selectedRow.Cells[11].Value
             };
 
-            FormEditClient edit = new(2, client, this);
+            FormEditClient edit = new(2, client, formClient: this);
             edit.ShowDialog();
         }
 
@@ -92,7 +92,7 @@ namespace Booking.UI
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-            FormEditClient formEdit = new(1, new(), this);
+            FormEditClient formEdit = new(1, new(), formClient: this);
             formEdit.ShowDialog();
         }
 
@@ -109,8 +109,19 @@ namespace Booking.UI
             SelectedClient.First_name = selectedRow.Cells[2].Value.ToString();
             SelectedClient.Last_name = selectedRow.Cells[1].Value.ToString();
             SelectedClient.Phone = selectedRow.Cells[5].Value.ToString();
-            
+
             MessageBox.Show($"Клиент {SelectedClient.ClientId} - {SelectedClient.Last_name} {SelectedClient.First_name} выбран", "Уведомление", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void guna2Button4_Click(object sender, EventArgs e)
+        {
+            if (!IsSelecedRow())
+            {
+                return;
+            }
+
+            FormListLogin formLogin = new(0, (int)guna2DataGridView1.SelectedRows[0].Cells[0].Value);
+            formLogin.ShowDialog();
         }
     }
 }

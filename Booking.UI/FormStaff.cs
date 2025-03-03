@@ -98,7 +98,7 @@ namespace Booking.UI
                 return;
             }
 
-            FormListLogin formLogin = new((int)guna2DataGridView1.SelectedRows[0].Cells[0].Value);
+            FormListLogin formLogin = new((int)guna2DataGridView1.SelectedRows[0].Cells[0].Value, 0);
             formLogin.ShowDialog();
         }
     }

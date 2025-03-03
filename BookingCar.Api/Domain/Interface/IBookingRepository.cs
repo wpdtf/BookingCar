@@ -6,7 +6,8 @@ public interface IBookingRepository
     /// Просмотр всех автомобилей
     /// </summary>
     /// <param name="carId">Или одного</param>
-    Task<IEnumerable<Car>> ViewCarAsync(int carId);
+    /// <param name="onlyActive">Исключительно активные автомобили</param>
+    Task<IEnumerable<Car>> ViewCarAsync(int carId, bool onlyActive);
 
     /// <summary>
     /// Редактирование автомобилей
@@ -43,7 +44,8 @@ public interface IBookingRepository
     /// Просмотр всех бронирований
     /// </summary>
     /// <param name="bookingId">Или одного</param>
-    Task<IEnumerable<Booking>> ViewBookingAsync(int bookingId);
+    /// <param name="clientId">по определенному клиенту</param>
+    Task<IEnumerable<Booking>> ViewBookingAsync(int bookingId, int clientId);
 
     /// <summary>
     /// Редактирование бронирования

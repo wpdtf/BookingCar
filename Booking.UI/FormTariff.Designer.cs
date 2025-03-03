@@ -145,7 +145,7 @@ namespace Booking.UI
             Guna2Button1.FillColor = Color.FromArgb(32, 32, 32);
             Guna2Button1.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
             Guna2Button1.ForeColor = Color.White;
-            Guna2Button1.Location = new Point(606, 10);
+            Guna2Button1.Location = new Point(697, 12);
             Guna2Button1.Margin = new Padding(4);
             Guna2Button1.Name = "Guna2Button1";
             Guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges2;
@@ -192,7 +192,7 @@ namespace Booking.UI
             guna2Button2.FillColor = Color.FromArgb(32, 32, 32);
             guna2Button2.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
             guna2Button2.ForeColor = Color.White;
-            guna2Button2.Location = new Point(763, 10);
+            guna2Button2.Location = new Point(855, 12);
             guna2Button2.Margin = new Padding(4);
             guna2Button2.Name = "guna2Button2";
             guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges6;

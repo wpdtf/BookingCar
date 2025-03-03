@@ -1,3 +1,6 @@
+using Guna.UI2.WinForms;
+using System.Data;
+
 namespace Booking.UI
 {
     public partial class FormCar : Form
@@ -9,6 +12,16 @@ namespace Booking.UI
         public FormCar()
         {
             InitializeComponent();
+
+            switch (CurrentUser.Role.ToLower())
+            {
+                case "клиент":
+                    Guna2Button1.Visible = false;
+                    guna2Button2.Visible = false;
+                    guna2Button3.Visible = false;
+                    guna2Button4.Visible = false;
+                    break;
+            }
         }
 
         public async Task UpdateDateAsync()
@@ -16,7 +29,7 @@ namespace Booking.UI
             isUpdate = true;
             var api = new ApiClient<List<Car>>(new Uri("http://localhost:5000/api/booking-car"));
 
-            _car = await api.GetAsync("booking/car");
+            _car = await api.GetAsync($"booking/car?onlyActive={CurrentUser.isClient}");
             guna2DataGridView1.DataSource = _car;
 
             isUpdate = false;

@@ -43,6 +43,13 @@ public partial class FormMain : Form
                 guna2Button8.Dispose();
                 guna2Button7.Dispose();
                 break;
+            case "клиент":
+                Guna2Button6.Dispose();
+                Guna2Button4.Dispose();
+                guna2Button8.Dispose();
+                guna2Button7.Dispose();
+                Guna2Button2.Dispose();
+                break;
         }
     }
 

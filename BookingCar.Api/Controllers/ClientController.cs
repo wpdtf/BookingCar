@@ -56,4 +56,47 @@ public class ClientController : ControllerBase
     {
         return Ok(new { Experience = await _clientRepository.GetExperienceClientAsync(clientId) });
     }
+
+    /// <summary>
+    /// Авторизация клиента в приложении
+    /// </summary>
+    /// <param name="authDTO">Данные для авторизации</param>
+    /// <returns>При успешном выполнении вернутся данные по сотруднику, или ошибка.</returns>
+    [HttpPost("auth")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [ProducesDefaultResponseType(typeof(ProblemDetails))]
+    public async Task<IActionResult> AuthAsync([FromBody] AuthDTO authDTO)
+    {
+        return Ok(await _clientRepository.AutorizationAsync(authDTO));
+    }
+
+    /// <summary>
+    /// Создаем\редактируем пользователя
+    /// </summary>
+    /// <param name="createDTO">Данные для создания клиента</param>
+    /// <returns>При успешном выполнении вернутся данные по сотруднику, или ошибка.</returns>
+    [HttpPut("auth")]
+    [ProducesResponseType(StatusCodes.Status204NoContent)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [ProducesDefaultResponseType(typeof(ProblemDetails))]
+    public async Task<IActionResult> UpdateUserAsync([FromBody] CreateUserDTO createDTO)
+    {
+        await _clientRepository.CreateUserAsync(createDTO);
+        return NoContent();
+    }
+
+    /// <summary>
+    /// Получение данных по логинам клиента
+    /// </summary>
+    /// <param name="userId">Клиент по которому выводим логин</param>
+    /// <returns>При успешном выполнении вернутся данные по сотруднику, или ошибка.</returns>
+    [HttpGet("auth")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [ProducesDefaultResponseType(typeof(ProblemDetails))]
+    public async Task<IActionResult> ViewAuthAsync([FromQuery] int userId)
+    {
+        return Ok(await _clientRepository.ViewUserAsync(userId));
+    }
 }

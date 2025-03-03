@@ -48,7 +48,7 @@ namespace Booking.UI.Client
             return default;
         }
 
-        public async Task PutAsync(string endpoint, object data)
+        public async Task<bool> PutAsync(string endpoint, object data)
         {
             var jsonData = JsonSerializer.Serialize(data);
             var content = new StringContent(jsonData, System.Text.Encoding.UTF8, "application/json");
@@ -61,10 +61,14 @@ namespace Booking.UI.Client
                 var error = JsonSerializer.Deserialize<Error>(jsonResponse);
 
                 MessageBox.Show(error.Detail, "Уведомление", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                return false;
             }
+
+            return true;
         }
 
-        public async Task PutNotBodyAsync(string endpoint)
+        public async Task<bool> PutNotBodyAsync(string endpoint)
         {
 
             var response = await _httpClient.PutAsync($"{_baseUrl}/{endpoint}", null);
@@ -75,7 +79,11 @@ namespace Booking.UI.Client
                 var error = JsonSerializer.Deserialize<Error>(jsonResponse);
 
                 MessageBox.Show(error.Detail, "Уведомление", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                return false;
             }
+
+            return true;
         }
     }
 }

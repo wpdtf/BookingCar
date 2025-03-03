@@ -22,4 +22,22 @@ public interface IClientRepository
     /// <param name="clientId">По какому клиенту</param>
     /// <returns>Стаж в годах</returns>
     Task<int> GetExperienceClientAsync(int clientId);
+
+    /// <summary>
+    /// Авторизация клиента
+    /// </summary>
+    /// <param name="authDTO">Данные для авторизации</param>
+    Task<Client> AutorizationAsync(AuthDTO authDTO);
+
+    /// <summary>
+    /// Изменение данных для авторизации клиентом
+    /// </summary>
+    /// <param name="createUserDTO">Входные данные для указания</param>
+    Task CreateUserAsync(CreateUserDTO createUserDTO);
+
+    /// <summary>
+    /// Вернем список логинов клиента
+    /// </summary>
+    /// <param name="userId">какой клиент</param>
+    Task<IEnumerable<User>> ViewUserAsync(int userId);
 }

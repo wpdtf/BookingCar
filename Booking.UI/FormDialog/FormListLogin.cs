@@ -6,11 +6,13 @@ public partial class FormListLogin : Form
 {
     private List<User> UserModel { get; set; }
     private int UserId { get; set; }
+    private int ClientId { get; set; }
 
-    public FormListLogin(int userId)
+    public FormListLogin(int userId, int clientId)
     {
         InitializeComponent();
         UserId = userId;
+        ClientId = clientId;
     }
 
     private async void FormEditStaff_Load(object sender, EventArgs e)
@@ -23,8 +25,16 @@ public partial class FormListLogin : Form
     {
         var api = new ApiClient<List<User>>(new Uri("http://localhost:5000/api/booking-car"));
 
-        UserModel = await api.GetAsync($"tech-support/auth?userId={UserId}&isFull=true");
-        guna2DataGridView1.DataSource = UserModel;
+        if (UserId > 0)
+        {
+            UserModel = await api.GetAsync($"tech-support/auth?userId={UserId}&isFull=true");
+            guna2DataGridView1.DataSource = UserModel;
+        }
+        else
+        {
+            UserModel = await api.GetAsync($"client/auth?userId={ClientId}");
+            guna2DataGridView1.DataSource = UserModel;
+        }
     }
 
     private async void guna2Button2_Click_1(object sender, EventArgs e)
@@ -39,16 +49,28 @@ public partial class FormListLogin : Form
             Login = guna2TextBox3.Text,
             Password = HashPassword(guna2TextBox4.Text),
             UserId = UserId,
+            Phone = "",
             DateLactActual = guna2DateTimePicker1.Value
         };
 
-        var api = new ApiClient<User>(new Uri("http://localhost:5000/api/booking-car"));
+        if (ClientId > 0)
+        {
+            user.UserId = ClientId;
+        }
 
-        await api.PutAsync("tech-support/auth", user);
+        var api = new ApiClient<User>(new Uri("http://localhost:5000/api/booking-car"));
+        if (UserId > 0)
+        {
+            await api.PutAsync("tech-support/auth", user);
+        }
+        else
+        {
+            await api.PutAsync("client/auth", user);
+        }
         await UpdateAsync();
     }
 
-    public string HashPassword(string password)
+    private string HashPassword(string password)
     {
         byte[] bytes = SHA256.HashData(Encoding.UTF8.GetBytes(password));
         return Convert.ToBase64String(bytes);

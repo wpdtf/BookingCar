@@ -1,3 +1,4 @@
+using BookingCar.Domain.Entities;
 using Guna.UI2.WinForms;
 using System.Text.RegularExpressions;
 using LocalClient = BookingCar.Domain.Entities.Client;
@@ -8,22 +9,44 @@ public partial class FormEditClient : Form
 {
     private LocalClient ClientModel { get; set; }
     private FormClient ClientForm { get; set; }
+    private FormAuth FormAuth { get; set; }
     private int Option { get; set; }
 
-    public FormEditClient(int option, LocalClient clientModel, FormClient formClient)
+    public FormEditClient(int option, LocalClient clientModel, FormClient formClient = null, FormAuth formAuth = null)
     {
         InitializeComponent();
         ClientModel = clientModel;
         Option = option;
         ClientForm = formClient;
+        FormAuth = formAuth;
     }
 
     private void FormEditStaff_Load(object sender, EventArgs e)
     {
         if (Option == 1)
         {
-            guna2Button2.Text = "Добавить";
-            label1.Text = "Добавление";
+            if (FormAuth is not null)
+            {
+                guna2Button2.Text = "Зарегестрироваться";
+                label1.Text = "Регистрация";
+
+                guna2CheckBox1.Checked = false;
+                guna2CheckBox1.Visible = false;
+                guna2CheckBox2.Checked = false;
+            }
+            else
+            {
+                guna2Button2.Text = "Добавить";
+                label1.Text = "Добавление";
+
+                label5.Visible = false;
+                label10.Visible = false;
+                label13.Visible = false;
+                guna2TextBox4.Visible = false;
+                guna2TextBox9.Visible = false;
+                guna2TextBox10.Visible = false;
+                guna2CheckBox2.Visible = false;
+            }
         }
         else
         {
@@ -39,6 +62,13 @@ public partial class FormEditClient : Form
             guna2DateTimePicker2.Value = ClientModel.DateStartDriving;
             guna2Button2.Text = "Сохранить";
             label1.Text = "Изменение";
+
+            label5.Visible = false;
+            label10.Visible = false;
+            guna2TextBox4.Visible = false;
+            guna2TextBox9.Visible = false;
+            guna2TextBox10.Visible = false;
+            guna2CheckBox2.Visible = false;
         }
     }
 
@@ -66,8 +96,14 @@ public partial class FormEditClient : Form
         };
 
         var api = new ApiClient<Staff>(new Uri("http://localhost:5000/api/booking-car"));
-
         await api.PutAsync("client/edit", client);
+
+        if (FormAuth is not null)
+        {
+            await UpdateClientUser();
+            return;
+        }
+
         await ClientForm.UpdateDateAsync();
         this.Close();
         return;
@@ -134,6 +170,14 @@ public partial class FormEditClient : Form
             validationMessage = "Водительский стаж считаем с 18 лет.";
         }
 
+        if (FormAuth is not null)
+        {
+            if (validationMessage.Count() == 0)
+            {
+                validationMessage = ValidLoginPassword();
+            }
+        }
+
         if (validationMessage.Count() > 0)
         {
             MessageBox.Show(validationMessage, "Уведомление", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -150,5 +194,96 @@ public partial class FormEditClient : Form
     private bool ContainsDigits(string input)
     {
         return input.Any(char.IsDigit);
+    }
+
+    private async Task UpdateClientUser()
+    {
+        CreateUserDTO user = new()
+        {
+            Login = guna2TextBox4.Text,
+            Password = HashPassword(guna2TextBox9.Text),
+            Phone = guna2TextBox5.Text,
+            DateLactActual = DateTime.Now.AddDays(60)
+        };
+
+        var api = new ApiClient<Staff>(new Uri("http://localhost:5000/api/booking-car"));
+        if (await api.PutAsync("client/auth", user))
+        {
+            MessageBox.Show("Авторизуйтесь повторно!", "Уведомление", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            this.Close();
+        }
+    }
+
+    private string HashPassword(string password)
+    {
+        byte[] bytes = SHA256.HashData(Encoding.UTF8.GetBytes(password));
+        return Convert.ToBase64String(bytes);
+    }
+
+    private string ValidLoginPassword()
+    {
+        var login = guna2TextBox4.Text;
+        var password = guna2TextBox9.Text;
+        var validationMessage = "";
+
+        if (string.IsNullOrWhiteSpace(login))
+        {
+            validationMessage = "Логин не может быть пустым.";
+        }
+
+        if (login.Length < 6)
+        {
+            validationMessage = "Логин должен содержать хотя бы 6 символов.";
+        }
+
+        if (!Regex.IsMatch(login, @"^[a-zA-Z0-9]+$"))
+        {
+            validationMessage = "Логин может содержать только латинские буквы и цифры.";
+        }
+
+        if (string.IsNullOrWhiteSpace(password))
+        {
+            validationMessage = "Пароль не может быть пустым.";
+        }
+
+        if (password.Length < 6)
+        {
+            validationMessage = "Пароль должен содержать хотя бы 6 символов.";
+        }
+
+        if (!Regex.IsMatch(password, @"[A-Z]"))
+        {
+            validationMessage = "Пароль должен содержать хотя бы одну заглавную букву.";
+        }
+
+        if (!Regex.IsMatch(password, @"[a-z]"))
+        {
+            validationMessage = "Пароль должен содержать хотя бы одну строчную букву.";
+        }
+
+        if (!Regex.IsMatch(password, @"[0-9]"))
+        {
+            validationMessage = "Пароль должен содержать хотя бы одну цифру.";
+        }
+
+        if (!(password == guna2TextBox10.Text))
+        {
+            validationMessage = "Пароль должен содержать хотя бы одну цифру.";
+        }
+
+        return validationMessage;
+    }
+
+    private void guna2CheckBox2_CheckedChanged(object sender, EventArgs e)
+    {
+        if (guna2CheckBox2.Checked)
+        {
+            guna2TextBox10.PasswordChar = '\0';
+        }
+        else
+        {
+            guna2TextBox10.PasswordChar = '*';
+
+        }
     }
 }

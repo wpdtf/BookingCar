@@ -166,7 +166,7 @@ namespace Booking.UI
             guna2Button3.FillColor = Color.FromArgb(32, 32, 32);
             guna2Button3.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
             guna2Button3.ForeColor = Color.White;
-            guna2Button3.Location = new Point(1197, 10);
+            guna2Button3.Location = new Point(1288, 11);
             guna2Button3.Margin = new Padding(4);
             guna2Button3.Name = "guna2Button3";
             guna2Button3.ShadowDecoration.CustomizableEdges = customizableEdges2;
@@ -189,7 +189,7 @@ namespace Booking.UI
             Guna2Button1.FillColor = Color.FromArgb(32, 32, 32);
             Guna2Button1.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
             Guna2Button1.ForeColor = Color.White;
-            Guna2Button1.Location = new Point(1355, 10);
+            Guna2Button1.Location = new Point(1446, 11);
             Guna2Button1.Margin = new Padding(4);
             Guna2Button1.Name = "Guna2Button1";
             Guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges4;
@@ -236,7 +236,7 @@ namespace Booking.UI
             guna2Button2.FillColor = Color.FromArgb(32, 32, 32);
             guna2Button2.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
             guna2Button2.ForeColor = Color.White;
-            guna2Button2.Location = new Point(1512, 10);
+            guna2Button2.Location = new Point(1604, 11);
             guna2Button2.Margin = new Padding(4);
             guna2Button2.Name = "guna2Button2";
             guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges8;
@@ -328,7 +328,7 @@ namespace Booking.UI
             dataGridViewCellStyle9.SelectionBackColor = Color.FromArgb(231, 229, 255);
             dataGridViewCellStyle9.SelectionForeColor = Color.FromArgb(71, 69, 94);
             guna2DataGridView3.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
-            guna2DataGridView3.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            guna2DataGridView3.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             guna2DataGridView3.BackgroundColor = Color.WhiteSmoke;
             dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle10.BackColor = Color.FromArgb(32, 32, 32);
@@ -391,7 +391,7 @@ namespace Booking.UI
             // 
             // guna2TextBox2
             // 
-            guna2TextBox2.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            guna2TextBox2.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             guna2TextBox2.BorderRadius = 12;
             guna2TextBox2.Cursor = Cursors.IBeam;
             guna2TextBox2.CustomizableEdges = customizableEdges9;
@@ -415,7 +415,7 @@ namespace Booking.UI
             // 
             // label3
             // 
-            label3.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            label3.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 204);
             label3.ForeColor = Color.DimGray;
